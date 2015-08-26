@@ -106,6 +106,19 @@
                  NSLog(@"Succes!");
                  NSLog(@"Response: %@", responseObject);
                  
+                 NSString *userID = [[responseObject objectForKey:@"ID"] valueForKey:@"userID"];
+                 NSLog(@"User ID - %@", userID);
+                 NSString *userName = self.userNameFieldLogin.text;
+                 NSLog(@"User name - %@", userName);
+                 
+                 
+                 KeychainItemWrapper *user = [[KeychainItemWrapper alloc] initWithIdentifier:@"token" accessGroup:nil];
+                 [user setObject:@"Myappstring" forKey: (__bridge id)kSecAttrService];
+                 [user setObject:userName forKey:(__bridge id)(kSecAttrAccount)];
+                 [user setObject:userID forKey:(__bridge id)(kSecValueData)];
+                 
+                 NSLog(@"\n User data - name - %@, ID - %@", [user objectForKey:(__bridge id)(kSecAttrAccount)], [user objectForKey:(__bridge id)(kSecValueData)]);
+                 
                  if ([[responseObject objectForKey:@"message"] isEqualToString:@"Success"])
                  {
                      [self.loginActivityIndicator stopAnimating];
@@ -148,13 +161,13 @@
 
 -(void) segueTabBar
 {
-    /*
+    
     TabBarMain *vc = [self.storyboard
                       instantiateViewControllerWithIdentifier:@"tabBar"];
     [self.navigationController pushViewController:vc animated:YES];
-    */
     
-    [self performSegueWithIdentifier:@"tabBarSegue" sender:self];
+    
+    //[self performSegueWithIdentifier:@"tabBarSegue" sender:self];
 }
 
 - (IBAction)registerTransitionTabBar:(id)sender
@@ -211,7 +224,7 @@
      {
          NSLog(@"Succes!");
          NSLog(@"Response: %@", responseObject);
-         
+
          if ([[responseObject objectForKey:@"message"] isEqualToString:@"Success"])
          {
              UIAlertController *alert = [Helper returnAlerViewWithTitle:@"Ok!"

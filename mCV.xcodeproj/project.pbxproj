@@ -13,6 +13,7 @@
 		0F3638BB1B8C75E500CD1A86 /* APILayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3638BA1B8C75E500CD1A86 /* APILayer.m */; };
 		0F3638BE1B8C776000CD1A86 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3638BD1B8C776000CD1A86 /* Helper.m */; };
 		0FF99E4C1B8DDFEC008F7024 /* TabBarMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF99E4B1B8DDFEC008F7024 /* TabBarMain.m */; };
+		0FF99E521B8E5D57008F7024 /* UserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF99E511B8E5D57008F7024 /* UserProfile.m */; };
 		0FFEBFEE1B8B0E21006F8DA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FFEBFED1B8B0E21006F8DA6 /* main.m */; };
 		0FFEBFF11B8B0E21006F8DA6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FFEBFF01B8B0E21006F8DA6 /* AppDelegate.m */; };
 		0FFEBFF71B8B0E21006F8DA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FFEBFF51B8B0E21006F8DA6 /* Main.storyboard */; };
@@ -46,6 +47,8 @@
 		0F3638BF1B8C78E700CD1A86 /* mCV.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mCV.pch; sourceTree = "<group>"; };
 		0FF99E4A1B8DDFEC008F7024 /* TabBarMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarMain.h; sourceTree = "<group>"; };
 		0FF99E4B1B8DDFEC008F7024 /* TabBarMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarMain.m; sourceTree = "<group>"; };
+		0FF99E501B8E5D57008F7024 /* UserProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfile.h; sourceTree = "<group>"; };
+		0FF99E511B8E5D57008F7024 /* UserProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfile.m; sourceTree = "<group>"; };
 		0FFEBFE81B8B0E21006F8DA6 /* mCV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mCV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FFEBFEC1B8B0E21006F8DA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FFEBFED1B8B0E21006F8DA6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -105,6 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				0FFEBFF51B8B0E21006F8DA6 /* Main.storyboard */,
+				0FF99E501B8E5D57008F7024 /* UserProfile.h */,
+				0FF99E511B8E5D57008F7024 /* UserProfile.m */,
 				0FF99E4A1B8DDFEC008F7024 /* TabBarMain.h */,
 				0FF99E4B1B8DDFEC008F7024 /* TabBarMain.m */,
 				0F3638B31B8C539800CD1A86 /* puLoginRegister.h */,
@@ -308,6 +313,7 @@
 			files = (
 				0FFEBFF11B8B0E21006F8DA6 /* AppDelegate.m in Sources */,
 				0F3638BE1B8C776000CD1A86 /* Helper.m in Sources */,
+				0FF99E521B8E5D57008F7024 /* UserProfile.m in Sources */,
 				0FF99E4C1B8DDFEC008F7024 /* TabBarMain.m in Sources */,
 				0FFEBFEE1B8B0E21006F8DA6 /* main.m in Sources */,
 				0F3638B21B8C503000CD1A86 /* PickUser.m in Sources */,
