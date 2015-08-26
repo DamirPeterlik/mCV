@@ -8,6 +8,8 @@
 
 #import "PickUser.h"
 #import "puLoginRegister.h"
+#import "TabBarMain.h"
+
 
 @interface PickUser ()
 
@@ -62,9 +64,24 @@
 }
 -(IBAction)buButtonPressed:(id)sender
 {
+    UIAlertController *alert = [Helper returnAlerViewWithTitle:@"Greska!"
+                                                   withMessage:@"Krivi podatci!"
+                                                 withOKhandler:^(UIAlertAction *action)
+                                {
+                                    NSLog(@"OK action pressed!");
+
+                                }];
+    [self presentViewController:alert animated:YES completion:^{
+        [self segueTabBar];
+    }];
     
-    
-    
+}
+
+-(void) segueTabBar
+{
+    TabBarMain *vc = [self.storyboard
+                      instantiateViewControllerWithIdentifier:@"tabBar"];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

@@ -9,6 +9,7 @@
 #import "puLoginRegister.h"
 #import "APILayer.h"
 #import "Constants.h"
+#import "TabBarMain.h"
 
 
 @interface puLoginRegister ()
@@ -97,8 +98,8 @@
         [self presentViewController:alert animated:YES completion:nil];
     }else
         {
-            self.registerActivityIndicator.hidden = NO;
-            [self.registerActivityIndicator startAnimating];
+            self.loginActivityIndicator.hidden = NO;
+            [self.loginActivityIndicator startAnimating];
             
             [APILayer loginUserWithUserName:self.userNameFieldLogin.text andPassword:self.passFieldLogin.text withSucces:^(AFHTTPRequestOperation *operation, id responseObject)
              {
@@ -107,14 +108,14 @@
                  
                  if ([[responseObject objectForKey:@"message"] isEqualToString:@"Success"])
                  {
-                     UIAlertController *alert = [Helper returnAlerViewWithTitle:@"Ok!"
-                                                                    withMessage:@"Ulogirani ste!"
-                                                                  withOKhandler:^(UIAlertAction *action){
-                                                                      NSLog(@"OK action pressed!");
-                                                        [self.registerActivityIndicator stopAnimating];
-                                                        self.registerActivityIndicator.hidesWhenStopped = YES;
-                                                                  }];
-                     [self presentViewController:alert animated:YES completion:nil];
+                     [self.loginActivityIndicator stopAnimating];
+                     self.loginActivityIndicator.hidesWhenStopped = YES;
+                     
+                     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Uspjeh!" message:[NSString stringWithFormat:@"Korisink %@ ulogiran!", self.userNameFieldLogin.text] delegate:nil cancelButtonTitle:@"Ok!" otherButtonTitles:nil];
+                     
+                     [alert show];
+                    
+                     [self segueTabBar];
                      
                  } else
                  {
@@ -123,8 +124,8 @@
                                                                   withOKhandler:^(UIAlertAction *action)
                                                  {
                                                      NSLog(@"OK action pressed!");
-                                                     [self.registerActivityIndicator stopAnimating];
-                                                     self.registerActivityIndicator.hidesWhenStopped = YES;
+                                                     [self.loginActivityIndicator stopAnimating];
+                                                     self.loginActivityIndicator.hidesWhenStopped = YES;
                                                  }];
                      [self presentViewController:alert animated:YES completion:nil];
                  }
@@ -136,13 +137,24 @@
                                                               withOKhandler:^(UIAlertAction *action)
                                              {
                                                  NSLog(@"OK action pressed!");
-                                                 [self.registerActivityIndicator stopAnimating];
-                                                 self.registerActivityIndicator.hidesWhenStopped = YES;
+                                                 [self.loginActivityIndicator stopAnimating];
+                                                 self.loginActivityIndicator.hidesWhenStopped = YES;
                                              }];
                  [self presentViewController:alert animated:YES completion:nil];
              }];
         }
     NSLog(@"Ulogirani korisnik: %@", self.userNameFieldLogin.text);
+}
+
+-(void) segueTabBar
+{
+    /*
+    TabBarMain *vc = [self.storyboard
+                      instantiateViewControllerWithIdentifier:@"tabBar"];
+    [self.navigationController pushViewController:vc animated:YES];
+    */
+    
+    [self performSegueWithIdentifier:@"tabBarSegue" sender:self];
 }
 
 - (IBAction)registerTransitionTabBar:(id)sender
