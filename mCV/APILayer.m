@@ -19,24 +19,36 @@
          andFailure:(void (^)(NSError *error))failure
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    
-    NSString *url = @"http://probaairmcv.site40.net/mCV/new1.php?email=%@&userName=%@&password=%@";
+    NSString *url = [Helper getValueFromPlistForKey:kConfigAPIRegisterURL];
     NSString *stringUrl = [NSString stringWithFormat:url,userName,email,password];
-
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    
     [manager POST:stringUrl parameters:nil success:success
           failure:^(AFHTTPRequestOperation *operation, NSError *error) {
               failure(error);
           }];
-    
+}
+
++(void)loginUserWithUserName:(NSString *)userName
+                 andPassword:(NSString*)password
+                  withSucces:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+                  andFailure:(void (^)(NSError *error))failure
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSString *url = [Helper getValueFromPlistForKey:kConfigAPILoginURL];
+    NSString *stringUrl = [NSString stringWithFormat:url,userName,password];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    [manager POST:stringUrl parameters:nil success:success
+          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              failure(error);
+          }];
 }
 
 @end
 
-
-
 /*
+ 
+ // NSString *url = @"http://probaairmcv.site40.net/mCV/new1.php?email=%@&userName=%@&password=%@";
+
  prouciti drugi nacin
  
  NSDictionary *parameters = @{@"userName":userName,

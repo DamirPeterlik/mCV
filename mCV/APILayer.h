@@ -18,4 +18,9 @@
                      withSucces:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
                      andFailure:(void (^)(NSError *error))failure;
 
++(void)loginUserWithUserName:(NSString *)userName
+                 andPassword:(NSString*)password
+                  withSucces:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+                  andFailure:(void (^)(NSError *error))failure;
+
 @end

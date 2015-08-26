@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>APIRegisterURL</key>
-	<string>http://probaairmcv.site40.net/mCV/new1.php?email=%@&amp;userName=%@&amp;password=%@</string>
+	<string>http://probaairmcv.site40.net/mCV/mcvRegisterUser.php?email=%@&amp;userName=%@&amp;password=%@</string>
 	<key>APILoginURL</key>
-	<string></string>
+	<string>http://probaairmcv.site40.net/mCV/mcvLoginUser.php?userName=%@&amp;password=%@</string>
 	<key>APIPostImageURL</key>
 	<string></string>
 	<key>APIGetImageURL</key>

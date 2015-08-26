@@ -85,132 +85,163 @@
 
 - (IBAction)loginTransitionTabBar:(id)sender
 {
+    NSLog(@"Login button klik!");
     
-    
-    
-}
-
-#define userName @"userName"
-#define email @"email"
-#define pass @"password"
-//#define passCheck @"Lozinka_provjera"
-
--(void) postUserName:(NSString*) userNameReg withMail:(NSString*) emailReg withPass:(NSString*) passwordReg
-{
-
-        NSMutableString *postString= [NSMutableString stringWithString:@"http://probaairmcv.site40.net/mCV/new1.php"];
-        //postString je http://www.mcv.herobo.com/proba2reg.php?Korisnicko_ime=Dado znaci php skripta + uneseno kor ime u text fild
+    if ([self.userNameFieldLogin.text isEqualToString:@""] || [self.passFieldLogin.text isEqualToString:@""])
+    {
+        UIAlertController *alert = [Helper returnAlerViewWithTitle:@"Greska!"
+                                                       withMessage:@"Popunite polja!"
+                                                     withOKhandler:^(UIAlertAction *action)
+                                    {
+                                        NSLog(@"Prazna polja!");
+                                        NSLog(@"OK action pressed!");
+                                    }];
         
-        [postString appendString:[NSString stringWithFormat:@"?%@=%@", userName, userNameReg]];
-        [postString appendString:[NSString stringWithFormat:@"&%@=%@", email, emailReg]];
-        [postString appendString:[NSString stringWithFormat:@"&%@=%@", pass, passwordReg]];
-        //[postString appendString:[NSString stringWithFormat:@"&%@=%@", passCheck, lozinka_check]];
-        [postString setString:[postString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-        
-        //------------------------------
-        
-        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:postString]];
-        
-        [request setHTTPMethod:@"POST"];
-        
-        //regCon = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
-        //radi i bez regCon=... ali nekad krivi odg iz phpa kupi, pa bolje bez
-        
-        NSLog(@"Upis se salje!");
-        NSMutableData *body=[NSMutableData data];
-        [request setHTTPBody:body];
-        //radi ispravno i s iznad dvije naredbe i bez
-        //NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:NULL error:&err];
-        
-        [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError)
-         {
-             
-             NSError* error;
-             NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-             NSLog(@"json - %@", json);
-             
-             NSString *userRegisterData = [json objectForKey:@"message"];
-             NSLog(@"userRegisterData - %@", userRegisterData);
-             
-             if (!connectionError && [data length] > 0)
+        [self presentViewController:alert animated:YES completion:nil];
+    }else
+        {
+            self.registerActivityIndicator.hidden = NO;
+            [self.registerActivityIndicator startAnimating];
+            
+            [APILayer loginUserWithUserName:self.userNameFieldLogin.text andPassword:self.passFieldLogin.text withSucces:^(AFHTTPRequestOperation *operation, id responseObject)
              {
-                 NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-                 NSLog(@"Response string jedan = %@", responseString);
+                 NSLog(@"Succes!");
+                 NSLog(@"Response: %@", responseObject);
                  
-                 if ([[json objectForKey:@"message"] isEqualToString:@"Success"])
+                 if ([[responseObject objectForKey:@"message"] isEqualToString:@"Success"])
                  {
-                     NSLog(@"Dodan!");
-                     UIAlertView *error = [[UIAlertView alloc] initWithTitle:@"Uspjeh!"
-                                                                     message:@"Registracija uspješna!"
-                                                                    delegate:self cancelButtonTitle:@"Ok!"
-                                                           otherButtonTitles:nil];
-                     [error show];
-
-                 }//if
-                 else
+                     UIAlertController *alert = [Helper returnAlerViewWithTitle:@"Ok!"
+                                                                    withMessage:@"Ulogirani ste!"
+                                                                  withOKhandler:^(UIAlertAction *action){
+                                                                      NSLog(@"OK action pressed!");
+                                                        [self.registerActivityIndicator stopAnimating];
+                                                        self.registerActivityIndicator.hidesWhenStopped = YES;
+                                                                  }];
+                     [self presentViewController:alert animated:YES completion:nil];
+                     
+                 } else
                  {
-                     UIAlertView *error = [[UIAlertView alloc] initWithTitle:@"Greška!"
-                                                                     message:@"Registracija neuspješna, pokušajte drugačije korisničko ime!"
-                                                                    delegate:self
-                                                           cancelButtonTitle:@"Ok!"
-                                                           otherButtonTitles:nil];
-                     [error show];
-                     NSLog(@"Nije dodan!");
-                 }//else
-             }//if (!connectionError && [data length] > 0)
-             [_registerActivityIndicator performSelectorOnMainThread:@selector(stopAnimating) withObject:nil waitUntilDone:YES];
-             
-         }];
-    //}//if (kor_ime != nil && mail != nil && lozinka != nil && lozinka_check != nil)
-}//void
+                     UIAlertController *alert = [Helper returnAlerViewWithTitle:@"Greska!"
+                                                                    withMessage:@"Krivi podatci!"
+                                                                  withOKhandler:^(UIAlertAction *action)
+                                                 {
+                                                     NSLog(@"OK action pressed!");
+                                                     [self.registerActivityIndicator stopAnimating];
+                                                     self.registerActivityIndicator.hidesWhenStopped = YES;
+                                                 }];
+                     [self presentViewController:alert animated:YES completion:nil];
+                     
+                 }
+                 
+             } andFailure:^(NSError *error) {
+                 NSLog(@"Failure!");
+                 NSLog(@"EROR: %@", error);
+                 UIAlertController *alert = [Helper returnAlerViewWithTitle:@"Greska!"
+                                                                withMessage:@"Provjerite vezu s internetom!"
+                                                              withOKhandler:^(UIAlertAction *action)
+                                             {
+                                                 NSLog(@"OK action pressed!");
+                                                 [self.registerActivityIndicator stopAnimating];
+                                                 self.registerActivityIndicator.hidesWhenStopped = YES;
+                                             }];
+                 [self presentViewController:alert animated:YES completion:nil];
+             }];
+        }
+}
 
 - (IBAction)registerTransitionTabBar:(id)sender
 {
-    NSLog(@"Klik!");
-    /*
-    [self postUserName:self.userNameFieldRegister.text
-              withMail:self.emailFieldRegister.text
-              withPass:self.passFieldRegister.text];
+    NSLog(@"Register button klik!");
     
-    NSLog(@"END! %@", self.userNameFieldRegister.text);
- */
+    if (self.emailFieldRegister.text.length >= 4 && self.userNameFieldRegister.text.length >= 4 && self.passFieldRegister.text.length >= 4 && self.reEnterPassFieldRegister.text.length >= 4)
+    {
+        [self checkPasswordsMatchAndRegOnDB];
 
+    }else
+        {
+        UIAlertController *alert = [Helper returnAlerViewWithTitle:@"Greska!"
+                                                       withMessage:@"Minimalan broj znakova 4!"
+                                                     withOKhandler:^(UIAlertAction *action)
+                                                    {
+                                                    NSLog(@"Min 4 znaka!");
+                                                    NSLog(@"OK action pressed!");
+                                                    }];
+        
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+
+}
+
+- (void) checkPasswordsMatchAndRegOnDB
+{
     
-     [APILayer registerUserWithUserName:self.userNameFieldRegister.text withemail:self.emailFieldRegister.text andPassword:self.passFieldRegister.text withSucces:^(AFHTTPRequestOperation *operation, id responseObject) {
-     NSLog(@"Succes!");
-     NSLog(@"Response: %@", responseObject);
+    if ([self.passFieldRegister.text isEqualToString: self.reEnterPassFieldRegister.text])
+    {
+        NSLog(@"Lozinke se podudaraju!");
+        [self registerToDB];
+    }
+    else
+    {
+        UIAlertView *error = [[UIAlertView alloc] initWithTitle:@"Greška!"
+                                                        message:@"Lozinke se ne podudaraju"
+                                                       delegate:self cancelButtonTitle:@"Ok!"
+                                              otherButtonTitles:nil];
+        [error show];
+    }
+}
+
+-(void) registerToDB
+{
+    self.registerActivityIndicator.hidden = NO;
+    [self.registerActivityIndicator startAnimating];
+    
+    //1. nacin, povezivanje pomocu network library-a, AFNetworking, radi s blokovima, brzi, jednostavniji, efikasniji
+    //nacin izveden nasljeđivanjem/povezivanjem klase APILayer
+    
+    [APILayer registerUserWithUserName:self.userNameFieldRegister.text withemail:self.emailFieldRegister.text andPassword:self.passFieldRegister.text
+                            withSucces:^(AFHTTPRequestOperation *operation, id responseObject)
+     {
+         NSLog(@"Succes!");
+         NSLog(@"Response: %@", responseObject);
+         
+         if ([[responseObject objectForKey:@"message"] isEqualToString:@"Success"])
+         {
+             UIAlertController *alert = [Helper returnAlerViewWithTitle:@"Ok!"
+                                                            withMessage:@"Korisnik dodan!"
+                                                          withOKhandler:^(UIAlertAction *action){
+                                                              NSLog(@"OK action pressed!");
+                                                              [self.registerActivityIndicator stopAnimating];
+                                                              self.registerActivityIndicator.hidesWhenStopped = YES;
+                                                          }];
+             [self presentViewController:alert animated:YES completion:nil];
+             
+         } else
+         {
+             UIAlertController *alert = [Helper returnAlerViewWithTitle:@"Greska!"
+                                                            withMessage:@"Pokuštajte drugo korisnicko ime!"
+                                                          withOKhandler:^(UIAlertAction *action)
+                                         {
+                                             NSLog(@"OK action pressed!");
+                                             [self.registerActivityIndicator stopAnimating];
+                                             self.registerActivityIndicator.hidesWhenStopped = YES;
+                                         }];
+             [self presentViewController:alert animated:YES completion:nil];
+             
+         }
+         
      } andFailure:^(NSError *error) {
-     NSLog(@"Failure!");
-     NSLog(@"EROR: %@", error);
-     
+         NSLog(@"Failure!");
+         NSLog(@"EROR: %@", error);
+         UIAlertController *alert = [Helper returnAlerViewWithTitle:@"Greska!"
+                                                        withMessage:@"Provjerite vezu s internetom!"
+                                                      withOKhandler:^(UIAlertAction *action)
+                                     {
+                                         NSLog(@"OK action pressed!");
+                                         [self.registerActivityIndicator stopAnimating];
+                                         self.registerActivityIndicator.hidesWhenStopped = YES;
+                                     }];
+         [self presentViewController:alert animated:YES completion:nil];
      }];
-   
-    
-    /*
-     NSString *apiUrlPart = [Helper getValueFromPlistForKey:kConfigAPIRegisterURL];
-
-    
-     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-     //NSDictionary *parameters = @{ @"latitude": @"39.6994090" };
-     
-     NSString *phpURL = [NSString stringWithFormat:apiUrlPart, self.emailFieldRegister.text, self.userNameFieldRegister.text, self.passFieldRegister.text];
-    
-     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-     
-     
-     [manager POST:phpURL
-        parameters:nil
-           success:^(AFHTTPRequestOperation *operation, id responseObject)
-                {
-                    NSLog(@"%@", responseObject);
-                }
-           failure:^(AFHTTPRequestOperation *operation, NSError *error)
-                {
-                    NSLog(@"Error: %@", error);
-            }];
-    
-    */
-    
 }
 
 - (IBAction)segmentControlValueChanged:(id)sender
@@ -226,9 +257,7 @@
                 NSLog(@"Segment LOGIN picked!");
                 self.navigationItem.title = @"Login proces";
             }
-            
             break;
-            
         case 1:
             self.loginView.hidden = YES;
             self.registerView.hidden = NO;
@@ -238,13 +267,10 @@
                 NSLog(@"Segment REGISTER picked!");
                 self.navigationItem.title = @"Registration proces";
             }
-            
             break;
-            
         default:
             break;
     }
-    
 }
 
 - (IBAction)switchRememberMeAction:(id)sender
@@ -334,3 +360,108 @@
 }
 
 @end
+
+
+//2. nacin, pozivanje asinkrone funkcije bez library-a
+/*
+ [self postUserName:self.userNameFieldRegister.text
+ withMail:self.emailFieldRegister.text
+ withPass:self.passFieldRegister.text];
+ 
+ NSLog(@"END! %@", self.userNameFieldRegister.text);
+ */
+
+/*
+ 3. nacin, slican 2. nacinu, ali bez povezivanje drugih klasa
+ 
+ NSString *apiUrlPart = [Helper getValueFromPlistForKey:kConfigAPIRegisterURL];
+ AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+ NSString *phpURL = [NSString stringWithFormat:apiUrlPart, self.emailFieldRegister.text, self.userNameFieldRegister.text, self.passFieldRegister.text];
+ manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+ 
+ [manager POST:phpURL
+ parameters:nil
+ success:^(AFHTTPRequestOperation *operation, id responseObject)
+ {
+ NSLog(@"%@", responseObject);
+ }
+ failure:^(AFHTTPRequestOperation *operation, NSError *error)
+ {
+ NSLog(@"Error: %@", error);
+ }];
+ 
+ 
+ #define userName @"userName"
+ #define email @"email"
+ #define pass @"password"
+ //#define passCheck @"Lozinka_provjera"
+ 
+ -(void) postUserName:(NSString*) userNameReg withMail:(NSString*) emailReg withPass:(NSString*) passwordReg
+ {
+ 
+ NSMutableString *postString= [NSMutableString stringWithString:@"http://probaairmcv.site40.net/mCV/new1.php"];
+ //postString je http://www.mcv.herobo.com/proba2reg.php?Korisnicko_ime=Dado znaci php skripta + uneseno kor ime u text fild
+ 
+ [postString appendString:[NSString stringWithFormat:@"?%@=%@", userName, userNameReg]];
+ [postString appendString:[NSString stringWithFormat:@"&%@=%@", email, emailReg]];
+ [postString appendString:[NSString stringWithFormat:@"&%@=%@", pass, passwordReg]];
+ //[postString appendString:[NSString stringWithFormat:@"&%@=%@", passCheck, lozinka_check]];
+ [postString setString:[postString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+ 
+ //------------------------------
+ 
+ NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:postString]];
+ 
+ [request setHTTPMethod:@"POST"];
+ 
+ //regCon = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
+ //radi i bez regCon=... ali nekad krivi odg iz phpa kupi, pa bolje bez
+ 
+ NSLog(@"Upis se salje!");
+ NSMutableData *body=[NSMutableData data];
+ [request setHTTPBody:body];
+ //radi ispravno i s iznad dvije naredbe i bez
+ //NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:NULL error:&err];
+ 
+ [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError)
+ {
+ 
+ NSError* error;
+ NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+ NSLog(@"json - %@", json);
+ 
+ NSString *userRegisterData = [json objectForKey:@"message"];
+ NSLog(@"userRegisterData - %@", userRegisterData);
+ 
+ if (!connectionError && [data length] > 0)
+ {
+ NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+ NSLog(@"Response string jedan = %@", responseString);
+ 
+ if ([[json objectForKey:@"message"] isEqualToString:@"Success"])
+ {
+ NSLog(@"Dodan!");
+ UIAlertView *error = [[UIAlertView alloc] initWithTitle:@"Uspjeh!"
+ message:@"Registracija uspješna!"
+ delegate:self cancelButtonTitle:@"Ok!"
+ otherButtonTitles:nil];
+ [error show];
+ 
+ }//if
+ else
+ {
+ UIAlertView *error = [[UIAlertView alloc] initWithTitle:@"Greška!"
+ message:@"Registracija neuspješna, pokušajte drugačije korisničko ime!"
+ delegate:self
+ cancelButtonTitle:@"Ok!"
+ otherButtonTitles:nil];
+ [error show];
+ NSLog(@"Nije dodan!");
+ }//else
+ }//if (!connectionError && [data length] > 0)
+ [_registerActivityIndicator performSelectorOnMainThread:@selector(stopAnimating) withObject:nil waitUntilDone:YES];
+ 
+ }];
+ //}//if (kor_ime != nil && mail != nil && lozinka != nil && lozinka_check != nil)
+ }//void
+ */
