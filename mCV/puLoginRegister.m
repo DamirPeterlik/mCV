@@ -38,7 +38,6 @@
     self.registerActivityIndicator.hidden = YES;
     self.loginActivityIndicator.hidden = YES;
     
-    
     self.userNameFieldRegister.delegate = self;
     self.passFieldRegister.delegate = self;
     self.userNameFieldLogin.delegate = self;
@@ -47,8 +46,6 @@
     self.loginView.hidden = NO;
     self.registerView.hidden = YES;
     self.navigationItem.title = @"Login";
-    
-    // Do any additional setup after loading the view.
     
     [self switchSavedData];
     
@@ -130,9 +127,7 @@
                                                      self.registerActivityIndicator.hidesWhenStopped = YES;
                                                  }];
                      [self presentViewController:alert animated:YES completion:nil];
-                     
                  }
-                 
              } andFailure:^(NSError *error) {
                  NSLog(@"Failure!");
                  NSLog(@"EROR: %@", error);
@@ -147,6 +142,7 @@
                  [self presentViewController:alert animated:YES completion:nil];
              }];
         }
+    NSLog(@"Ulogirani korisnik: %@", self.userNameFieldLogin.text);
 }
 
 - (IBAction)registerTransitionTabBar:(id)sender
