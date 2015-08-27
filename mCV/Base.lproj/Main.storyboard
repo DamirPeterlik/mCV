@@ -333,7 +333,6 @@
                                         </state>
                                         <connections>
                                             <action selector="registerTransitionTabBar:" destination="p7l-6c-yvX" eventType="touchUpInside" id="8su-zV-sLN"/>
-                                            <segue destination="TCX-0w-QE5" kind="show" identifier="tabBarSegue" id="fg9-bX-dCR"/>
                                         </connections>
                                     </button>
                                 </subviews>

@@ -97,9 +97,12 @@
         NSLog(@"\n User data - name - %@, ID - %@", [user objectForKey:(__bridge id)(kSecAttrAccount)], [user objectForKey:(__bridge id)(kSecValueData)]);
         
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+   
+        //userImageLinkToDB
+        //@"http://probaairmcv.site40.net/mCV/userImages/proba7.php?userImageNameID=%@_%@.jpg"
         
         NSString *phpURL = [NSString stringWithFormat:
-                            @"http://probaairmcv.site40.net/mCV/userImages/proba6.php?userImageNameID=%@_%@.jpg", [user objectForKey:(__bridge id)(kSecAttrAccount)], [user objectForKey:(__bridge id)(kSecValueData)]];
+                            @"http://probaairmcv.site40.net/mCV/userImages/0mCVimageUploadSaveToDBlink.php?userImageNameID=%@_%@.jpg&userID=%@", [user objectForKey:(__bridge id)(kSecAttrAccount)], [user objectForKey:(__bridge id)(kSecValueData)], [user objectForKey:(__bridge id)(kSecValueData)]];
         
         AFHTTPRequestOperation *operation = [manager POST:phpURL parameters:nil
                                 constructingBodyWithBlock:^(id<AFMultipartFormData> formData)

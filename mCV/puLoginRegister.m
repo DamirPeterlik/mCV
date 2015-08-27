@@ -224,6 +224,18 @@
      {
          NSLog(@"Succes!");
          NSLog(@"Response: %@", responseObject);
+         
+         NSString *userID = [[responseObject objectForKey:@"ID"] valueForKey:@"userID"];
+         NSLog(@"User ID - %@", userID);
+         NSString *userName = self.userNameFieldLogin.text;
+         NSLog(@"User name - %@", userName);
+         
+         KeychainItemWrapper *user = [[KeychainItemWrapper alloc] initWithIdentifier:@"token" accessGroup:nil];
+         [user setObject:@"Myappstring" forKey: (__bridge id)kSecAttrService];
+         [user setObject:userName forKey:(__bridge id)(kSecAttrAccount)];
+         [user setObject:userID forKey:(__bridge id)(kSecValueData)];
+         
+         NSLog(@"\n User data - name - %@, ID - %@", [user objectForKey:(__bridge id)(kSecAttrAccount)], [user objectForKey:(__bridge id)(kSecValueData)]);
 
          if ([[responseObject objectForKey:@"message"] isEqualToString:@"Success"])
          {
