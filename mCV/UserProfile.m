@@ -102,7 +102,8 @@
         //@"http://probaairmcv.site40.net/mCV/userImages/proba7.php?userImageNameID=%@_%@.jpg"
         
         NSString *phpURL = [NSString stringWithFormat:
-                            @"http://probaairmcv.site40.net/mCV/userImages/0mCVimageUploadSaveToDBlink.php?userImageNameID=%@_%@.jpg&userID=%@", [user objectForKey:(__bridge id)(kSecAttrAccount)], [user objectForKey:(__bridge id)(kSecValueData)], [user objectForKey:(__bridge id)(kSecValueData)]];
+                            @"http://probaairmcv.site40.net/mCV/userImages/0mCVimageUploadSaveToDBlink.php?userImageNameID=%@_%@.jpg&userID=%@", [user objectForKey:(__bridge id)(kSecValueData)], [user objectForKey:(__bridge id)(kSecAttrAccount)], [user objectForKey:(__bridge id)(kSecValueData)]];
+        //salje se ID korisnika, pa ime korisnika pa jos jednom ID korisnika
         
         AFHTTPRequestOperation *operation = [manager POST:phpURL parameters:nil
                                 constructingBodyWithBlock:^(id<AFMultipartFormData> formData)
@@ -182,6 +183,13 @@
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
     [picker dismissViewControllerAnimated:NO completion:nil];
+}
+
+- (void) getUserImage
+{
+    
+    
+    
 }
 
 @end

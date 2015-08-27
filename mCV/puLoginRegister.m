@@ -125,11 +125,8 @@
                      self.loginActivityIndicator.hidesWhenStopped = YES;
                      
                      UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Uspjeh!" message:[NSString stringWithFormat:@"Korisink %@ ulogiran!", self.userNameFieldLogin.text] delegate:nil cancelButtonTitle:@"Ok!" otherButtonTitles:nil];
-                     
                      [alert show];
-                    
                      [self segueTabBar];
-                     
                  } else
                  {
                      UIAlertController *alert = [Helper returnAlerViewWithTitle:@"Greska!"
@@ -227,7 +224,7 @@
          
          NSString *userID = [[responseObject objectForKey:@"ID"] valueForKey:@"userID"];
          NSLog(@"User ID - %@", userID);
-         NSString *userName = self.userNameFieldLogin.text;
+         NSString *userName = self.userNameFieldRegister.text;
          NSLog(@"User name - %@", userName);
          
          KeychainItemWrapper *user = [[KeychainItemWrapper alloc] initWithIdentifier:@"token" accessGroup:nil];
@@ -239,15 +236,16 @@
 
          if ([[responseObject objectForKey:@"message"] isEqualToString:@"Success"])
          {
-             UIAlertController *alert = [Helper returnAlerViewWithTitle:@"Ok!"
-                                                            withMessage:@"Korisnik dodan!"
-                                                          withOKhandler:^(UIAlertAction *action){
-                                                              NSLog(@"OK action pressed!");
-                                                              [self.registerActivityIndicator stopAnimating];
-                                                              self.registerActivityIndicator.hidesWhenStopped = YES;
-                                                          }];
-             [self presentViewController:alert animated:YES completion:nil];
-             
+                [self.registerActivityIndicator stopAnimating];
+                self.registerActivityIndicator.hidesWhenStopped = YES;
+                 
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Uspjeh!"
+                                                                 message:[NSString stringWithFormat:@"Korisink %@ registriran!", self.userNameFieldRegister.text]
+                                                                delegate:nil
+                                                       cancelButtonTitle:@"Ok!"
+                                                       otherButtonTitles:nil];
+                [alert show];
+                [self segueTabBar];
          } else
          {
              UIAlertController *alert = [Helper returnAlerViewWithTitle:@"Greska!"
