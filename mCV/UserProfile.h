@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "KeychainItemWrapper.h"
+#import "Helper.h"
+#import "Constants.h"
 
 @interface UserProfile : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate>
 

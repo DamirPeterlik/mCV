@@ -100,17 +100,16 @@
         
         KeychainItemWrapper *user = [[KeychainItemWrapper alloc] initWithIdentifier:@"token" accessGroup:nil];
         NSLog(@"\n User data - name - %@, ID - %@", [user objectForKey:(__bridge id)(kSecAttrAccount)], [user objectForKey:(__bridge id)(kSecValueData)]);
+
+        NSString *userName = [user objectForKey:(__bridge id)(kSecAttrAccount)];
+        NSString *userID = [user objectForKey:(__bridge id)(kSecValueData)];
+        
+        NSString *url = [Helper getValueFromPlistForKey:kConfigAPIPostImageLinkToDB];
+        NSString *stringUrl = [NSString stringWithFormat:url,userID,userName,userID];
         
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-   
-        //userImageLinkToDB
-        //@"http://probaairmcv.site40.net/mCV/userImages/proba7.php?userImageNameID=%@_%@.jpg"
         
-        NSString *phpURL = [NSString stringWithFormat:
-                            @"http://probaairmcv.site40.net/mCV/userImages/0mCVimageUploadSaveToDBlink.php?userImageNameID=%@_%@.jpg&userID=%@", [user objectForKey:(__bridge id)(kSecValueData)], [user objectForKey:(__bridge id)(kSecAttrAccount)], [user objectForKey:(__bridge id)(kSecValueData)]];
-        //salje se ID korisnika, pa ime korisnika pa jos jednom ID korisnika
-        
-        AFHTTPRequestOperation *operation = [manager POST:phpURL parameters:nil
+        AFHTTPRequestOperation *operation = [manager POST:stringUrl parameters:nil
                                 constructingBodyWithBlock:^(id<AFMultipartFormData> formData)
                     {
                    [formData appendPartWithFileData:imageData
@@ -214,7 +213,7 @@
 
                                if(!error)
                                {
-                                   NSLog(@"Ima slike");
+                                   NSLog(@"Ima linka za sliku");
                                    [self.activityIndicator stopAnimating];
                                    self.activityIndicator.hidesWhenStopped = YES;
                                    self.userImg.layer.borderWidth = 5.0f;
@@ -224,7 +223,7 @@
                                }
                                else
                                {
-                                   NSLog(@"Nema slike");
+                                   NSLog(@"Nema linka slike");
                                    [self.activityIndicator stopAnimating];
                                    self.activityIndicator.hidesWhenStopped = YES;
                                }
