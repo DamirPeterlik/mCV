@@ -9,6 +9,6 @@
 	<key>APIPostImageURL</key>
 	<string></string>
 	<key>APIGetImageURL</key>
-	<string></string>
+	<string>http://probaairmcv.site40.net/mCV/userImages/0mcvGetUserImg.php?userID=%@</string>
 </dict>
 </plist>

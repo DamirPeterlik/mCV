@@ -23,4 +23,8 @@
                   withSucces:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
                   andFailure:(void (^)(NSError *error))failure;
 
++(void)getImageWithUserID:(NSString *)userID
+               withSucces:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+               andFailure:(void (^)(NSError *error))failure;
+
 @end

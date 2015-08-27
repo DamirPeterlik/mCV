@@ -8,6 +8,9 @@
 
 #import "UserProfile.h"
 #import <AFNetworking/AFNetworking.h>
+#import "APILayer.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+
 
 @interface UserProfile ()
 
@@ -24,6 +27,8 @@
     self.userImg.layer.borderColor = [[UIColor whiteColor] CGColor];
     
     self.activityIndicator.hidden = YES;
+    
+    [self getUserImage];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -187,8 +192,57 @@
 
 - (void) getUserImage
 {
+    self.activityIndicator.hidden = NO;
+    [self.activityIndicator startAnimating];
     
+    KeychainItemWrapper *user = [[KeychainItemWrapper alloc] initWithIdentifier:@"token" accessGroup:nil];
+    NSLog(@"\n User data - name - %@, ID - %@", [user objectForKey:(__bridge id)(kSecAttrAccount)], [user objectForKey:(__bridge id)(kSecValueData)]);
+    NSString *userID = [user objectForKey:(__bridge id)(kSecValueData)];
     
+    [APILayer getImageWithUserID:userID
+                      withSucces:^(AFHTTPRequestOperation *operation, id responseObject) {
+                          
+                          NSLog(@"Success");
+                          NSLog(@"Get image data - %@", responseObject);
+                          
+                          NSString *imageLink = [responseObject objectForKey:@"imageLink"];
+                          NSLog(@"Image link: %@", imageLink);
+                          [self.userImg sd_setImageWithURL:[NSURL URLWithString:imageLink]
+                                            placeholderImage:nil
+                                                   completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL)
+                           {
+
+                               if(!error)
+                               {
+                                   NSLog(@"Ima slike");
+                                   [self.activityIndicator stopAnimating];
+                                   self.activityIndicator.hidesWhenStopped = YES;
+                                   self.userImg.layer.borderWidth = 5.0f;
+                                   self.userImg.layer.cornerRadius = 100;
+                                   self.userImg.layer.masksToBounds = YES;
+                                   self.userImg.layer.borderColor = [[UIColor blueColor] CGColor];
+                               }
+                               else
+                               {
+                                   NSLog(@"Nema slike");
+                                   [self.activityIndicator stopAnimating];
+                                   self.activityIndicator.hidesWhenStopped = YES;
+                               }
+                               
+                               
+                           }];
+                      
+                      } andFailure:^(NSError *error) {
+                          
+                          NSLog(@"Error %@", error);
+                          [self.activityIndicator stopAnimating];
+                          self.activityIndicator.hidesWhenStopped = YES;
+                          
+        
+        
+    }];
+    
+    //[UIImage imageNamed:@"imgPlaceholder"]
     
 }
 

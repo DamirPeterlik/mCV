@@ -43,6 +43,25 @@
           }];
 }
 
++(void)getImageWithUserID:(NSString *)userID
+                  withSucces:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+                  andFailure:(void (^)(NSError *error))failure
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    NSString *url = [Helper getValueFromPlistForKey:kConfigAPIGetImgURL];
+    NSString *stringUrl = [NSString stringWithFormat:url,userID];
+    
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    
+    [manager POST:stringUrl parameters:nil success:success
+          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              failure(error);
+          }];
+    
+    //http://probaairmcv.site40.net/mCV/userImages/0mcvGetUserImg.php
+}
+
 @end
 
 /*

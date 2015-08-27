@@ -10,6 +10,7 @@ static NSString *kDefaultConfigFile = @"mCV";
 
 static NSString *kConfigAPIRegisterURL = @"APIRegisterURL";
 static NSString *kConfigAPILoginURL = @"APILoginURL";
+static NSString *kConfigAPIGetImgURL = @"APIGetImageURL";
 
 
 static NSString *kApiResponseConstant = @"response";
