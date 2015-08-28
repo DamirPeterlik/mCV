@@ -27,4 +27,8 @@
                withSucces:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
                andFailure:(void (^)(NSError *error))failure;
 
++(void)getJobsWithjobUrl:(NSString *)jobUrl
+               withSucces:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+               andFailure:(void (^)(NSError *error))failure;
+
 @end

@@ -62,6 +62,25 @@
     //http://probaairmcv.site40.net/mCV/userImages/0mcvGetUserImg.php
 }
 
++(void)getJobsWithjobUrl:(NSString *)jobUrl
+              withSucces:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+              andFailure:(void (^)(NSError *error))failure
+{
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    NSString *url = [Helper getValueFromPlistForKey:kConfigAPIGetJobsURL];
+    //NSString *stringUrl = [NSString stringWithFormat:url,jobUrl];
+    
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    
+    [manager POST:url parameters:nil success:success
+          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              failure(error);
+          }];
+    
+}
+
 @end
 
 /*

@@ -14,6 +14,7 @@
 		0F582B7B1B90570D00077597 /* UserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F582B7A1B90570D00077597 /* UserProfile.m */; };
 		0F582B7E1B90575C00077597 /* puLoginRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F582B7D1B90575C00077597 /* puLoginRegister.m */; };
 		0F582B811B9057A300077597 /* TabBarMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F582B801B9057A300077597 /* TabBarMain.m */; };
+		0F582B851B90877A00077597 /* getJobs.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F582B841B90877A00077597 /* getJobs.m */; };
 		0FFEBFEE1B8B0E21006F8DA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FFEBFED1B8B0E21006F8DA6 /* main.m */; };
 		0FFEBFF11B8B0E21006F8DA6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FFEBFF01B8B0E21006F8DA6 /* AppDelegate.m */; };
 		0FFEBFF71B8B0E21006F8DA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FFEBFF51B8B0E21006F8DA6 /* Main.storyboard */; };
@@ -49,6 +50,8 @@
 		0F582B7D1B90575C00077597 /* puLoginRegister.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = puLoginRegister.m; sourceTree = "<group>"; };
 		0F582B7F1B9057A300077597 /* TabBarMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarMain.h; sourceTree = "<group>"; };
 		0F582B801B9057A300077597 /* TabBarMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarMain.m; sourceTree = "<group>"; };
+		0F582B831B90877A00077597 /* getJobs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = getJobs.h; sourceTree = "<group>"; };
+		0F582B841B90877A00077597 /* getJobs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = getJobs.m; sourceTree = "<group>"; };
 		0FFEBFE81B8B0E21006F8DA6 /* mCV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mCV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FFEBFEC1B8B0E21006F8DA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FFEBFED1B8B0E21006F8DA6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -120,8 +123,18 @@
 				0F582B7D1B90575C00077597 /* puLoginRegister.m */,
 				0F582B7F1B9057A300077597 /* TabBarMain.h */,
 				0F582B801B9057A300077597 /* TabBarMain.m */,
+				0F582B821B90607C00077597 /* JobsTable */,
 			);
 			path = PrivateUser;
+			sourceTree = "<group>";
+		};
+		0F582B821B90607C00077597 /* JobsTable */ = {
+			isa = PBXGroup;
+			children = (
+				0F582B831B90877A00077597 /* getJobs.h */,
+				0F582B841B90877A00077597 /* getJobs.m */,
+			);
+			path = JobsTable;
 			sourceTree = "<group>";
 		};
 		0FFEBFDF1B8B0E21006F8DA6 = {
@@ -344,6 +357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F582B7B1B90570D00077597 /* UserProfile.m in Sources */,
+				0F582B851B90877A00077597 /* getJobs.m in Sources */,
 				0FFEBFF11B8B0E21006F8DA6 /* AppDelegate.m in Sources */,
 				0F582B811B9057A300077597 /* TabBarMain.m in Sources */,
 				0FFEBFEE1B8B0E21006F8DA6 /* main.m in Sources */,

@@ -1,0 +1,8 @@
+platform :ios, '7.0'
+
+pod 'SVProgressHUD'
+pod 'AFNetworking', "~> 2.0"
+pod 'PureLayout'
+pod 'JSONModel'
+pod 'SDWebImage', '~>3.7'
+pod 'KeychainItemWrapper'

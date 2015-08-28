@@ -10,5 +10,7 @@
 	<string>http://probaairmcv.site40.net/mCV/userImages/0mCVimageUploadSaveToDBlink.php?userImageNameID=%@_%@.jpg&amp;userID=%@</string>
 	<key>APIGetImageURL</key>
 	<string>http://probaairmcv.site40.net/mCV/userImages/0mcvGetUserImg.php?userID=%@</string>
+	<key>APIGetJobsURL</key>
+	<string>http://probaairmcv.site40.net/mCV/mcvGetJobs.php</string>
 </dict>
 </plist>
