@@ -97,53 +97,40 @@
         
         [self presentViewController:alert animated:YES completion:nil];
     }else
-        {
-            self.loginActivityIndicator.hidden = NO;
-            [self.loginActivityIndicator startAnimating];
-            
-            [APILayer loginUserWithUserName:self.userNameFieldLogin.text andPassword:self.passFieldLogin.text withSucces:^(AFHTTPRequestOperation *operation, id responseObject)
+    {
+        self.loginActivityIndicator.hidden = NO;
+        [self.loginActivityIndicator startAnimating];
+        
+        [APILayer loginUserWithUserName:self.userNameFieldLogin.text andPassword:self.passFieldLogin.text withSucces:^(AFHTTPRequestOperation *operation, id responseObject)
+         {
+             NSLog(@"Succes!");
+             NSLog(@"Response: %@", responseObject);
+             
+             NSString *userID = [[responseObject objectForKey:@"ID"] valueForKey:@"userID"];
+             NSLog(@"User ID - %@", userID);
+             NSString *userName = self.userNameFieldLogin.text;
+             NSLog(@"User name - %@", userName);
+             
+             
+             KeychainItemWrapper *user = [[KeychainItemWrapper alloc] initWithIdentifier:@"token" accessGroup:nil];
+             [user setObject:@"Myappstring" forKey: (__bridge id)kSecAttrService];
+             [user setObject:userName forKey:(__bridge id)(kSecAttrAccount)];
+             [user setObject:userID forKey:(__bridge id)(kSecValueData)];
+             
+             NSLog(@"\n User data - name - %@, ID - %@", [user objectForKey:(__bridge id)(kSecAttrAccount)], [user objectForKey:(__bridge id)(kSecValueData)]);
+             
+             if ([[responseObject objectForKey:@"message"] isEqualToString:@"Success"])
              {
-                 NSLog(@"Succes!");
-                 NSLog(@"Response: %@", responseObject);
+                 [self.loginActivityIndicator stopAnimating];
+                 self.loginActivityIndicator.hidesWhenStopped = YES;
                  
-                 NSString *userID = [[responseObject objectForKey:@"ID"] valueForKey:@"userID"];
-                 NSLog(@"User ID - %@", userID);
-                 NSString *userName = self.userNameFieldLogin.text;
-                 NSLog(@"User name - %@", userName);
-                 
-                 
-                 KeychainItemWrapper *user = [[KeychainItemWrapper alloc] initWithIdentifier:@"token" accessGroup:nil];
-                 [user setObject:@"Myappstring" forKey: (__bridge id)kSecAttrService];
-                 [user setObject:userName forKey:(__bridge id)(kSecAttrAccount)];
-                 [user setObject:userID forKey:(__bridge id)(kSecValueData)];
-                 
-                 NSLog(@"\n User data - name - %@, ID - %@", [user objectForKey:(__bridge id)(kSecAttrAccount)], [user objectForKey:(__bridge id)(kSecValueData)]);
-                 
-                 if ([[responseObject objectForKey:@"message"] isEqualToString:@"Success"])
-                 {
-                     [self.loginActivityIndicator stopAnimating];
-                     self.loginActivityIndicator.hidesWhenStopped = YES;
-                     
-                     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Uspjeh!" message:[NSString stringWithFormat:@"Korisink %@ ulogiran!", self.userNameFieldLogin.text] delegate:nil cancelButtonTitle:@"Ok!" otherButtonTitles:nil];
-                     [alert show];
-                     [self segueTabBar];
-                 } else
-                 {
-                     UIAlertController *alert = [Helper returnAlerViewWithTitle:@"Greska!"
-                                                                    withMessage:@"Krivi podatci!"
-                                                                  withOKhandler:^(UIAlertAction *action)
-                                                 {
-                                                     NSLog(@"OK action pressed!");
-                                                     [self.loginActivityIndicator stopAnimating];
-                                                     self.loginActivityIndicator.hidesWhenStopped = YES;
-                                                 }];
-                     [self presentViewController:alert animated:YES completion:nil];
-                 }
-             } andFailure:^(NSError *error) {
-                 NSLog(@"Failure!");
-                 NSLog(@"EROR: %@", error);
+                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Uspjeh!" message:[NSString stringWithFormat:@"Korisink %@ ulogiran!", self.userNameFieldLogin.text] delegate:nil cancelButtonTitle:@"Ok!" otherButtonTitles:nil];
+                 [alert show];
+                 [self segueTabBar];
+             } else
+             {
                  UIAlertController *alert = [Helper returnAlerViewWithTitle:@"Greska!"
-                                                                withMessage:@"Provjerite vezu s internetom!"
+                                                                withMessage:@"Krivi podatci!"
                                                               withOKhandler:^(UIAlertAction *action)
                                              {
                                                  NSLog(@"OK action pressed!");
@@ -151,8 +138,21 @@
                                                  self.loginActivityIndicator.hidesWhenStopped = YES;
                                              }];
                  [self presentViewController:alert animated:YES completion:nil];
-             }];
-        }
+             }
+         } andFailure:^(NSError *error) {
+             NSLog(@"Failure!");
+             NSLog(@"EROR: %@", error);
+             UIAlertController *alert = [Helper returnAlerViewWithTitle:@"Greska!"
+                                                            withMessage:@"Provjerite vezu s internetom!"
+                                                          withOKhandler:^(UIAlertAction *action)
+                                         {
+                                             NSLog(@"OK action pressed!");
+                                             [self.loginActivityIndicator stopAnimating];
+                                             self.loginActivityIndicator.hidesWhenStopped = YES;
+                                         }];
+             [self presentViewController:alert animated:YES completion:nil];
+         }];
+    }
     NSLog(@"Ulogirani korisnik: %@", self.userNameFieldLogin.text);
 }
 
@@ -174,20 +174,20 @@
     if (self.emailFieldRegister.text.length >= 4 && self.userNameFieldRegister.text.length >= 4 && self.passFieldRegister.text.length >= 4 && self.reEnterPassFieldRegister.text.length >= 4)
     {
         [self checkPasswordsMatchAndRegOnDB];
-
+        
     }else
-        {
+    {
         UIAlertController *alert = [Helper returnAlerViewWithTitle:@"Greska!"
                                                        withMessage:@"Minimalan broj znakova 4!"
                                                      withOKhandler:^(UIAlertAction *action)
-                                                    {
-                                                    NSLog(@"Min 4 znaka!");
-                                                    NSLog(@"OK action pressed!");
-                                                    }];
+                                    {
+                                        NSLog(@"Min 4 znaka!");
+                                        NSLog(@"OK action pressed!");
+                                    }];
         
-            [self presentViewController:alert animated:YES completion:nil];
-        }
-
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+    
 }
 
 - (void) checkPasswordsMatchAndRegOnDB
@@ -233,19 +233,19 @@
          [user setObject:userID forKey:(__bridge id)(kSecValueData)];
          
          NSLog(@"\n User data - name - %@, ID - %@", [user objectForKey:(__bridge id)(kSecAttrAccount)], [user objectForKey:(__bridge id)(kSecValueData)]);
-
+         
          if ([[responseObject objectForKey:@"message"] isEqualToString:@"Success"])
          {
-                [self.registerActivityIndicator stopAnimating];
-                self.registerActivityIndicator.hidesWhenStopped = YES;
-                 
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Uspjeh!"
-                                                                 message:[NSString stringWithFormat:@"Korisink %@ registriran!", self.userNameFieldRegister.text]
-                                                                delegate:nil
-                                                       cancelButtonTitle:@"Ok!"
-                                                       otherButtonTitles:nil];
-                [alert show];
-                [self segueTabBar];
+             [self.registerActivityIndicator stopAnimating];
+             self.registerActivityIndicator.hidesWhenStopped = YES;
+             
+             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Uspjeh!"
+                                                             message:[NSString stringWithFormat:@"Korisink %@ registriran!", self.userNameFieldRegister.text]
+                                                            delegate:nil
+                                                   cancelButtonTitle:@"Ok!"
+                                                   otherButtonTitles:nil];
+             [alert show];
+             [self segueTabBar];
          } else
          {
              UIAlertController *alert = [Helper returnAlerViewWithTitle:@"Greska!"
@@ -361,7 +361,7 @@
         }//if
         [defaults synchronize];
     }//else
-
+    
 }
 
 - (void) switchSavedData
@@ -387,7 +387,7 @@
     NSLog(@"Saved data - user - %@, pass - %@", [keychainWrapper objectForKey:
                                                  (__bridge id)(kSecAttrAccount)],[keychainWrapper objectForKey:
                                                                                   (__bridge id)(kSecValueData)]);
- 
+    
 }
 
 @end

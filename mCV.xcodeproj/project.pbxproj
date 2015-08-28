@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		0F3638AF1B8C4DAE00CD1A86 /* mCV.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F3638AE1B8C4DAE00CD1A86 /* mCV.plist */; };
-		0F3638B21B8C503000CD1A86 /* PickUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3638B11B8C503000CD1A86 /* PickUser.m */; };
-		0F3638B51B8C539800CD1A86 /* puLoginRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3638B41B8C539800CD1A86 /* puLoginRegister.m */; };
-		0F3638BB1B8C75E500CD1A86 /* APILayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3638BA1B8C75E500CD1A86 /* APILayer.m */; };
-		0F3638BE1B8C776000CD1A86 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3638BD1B8C776000CD1A86 /* Helper.m */; };
-		0FF99E4C1B8DDFEC008F7024 /* TabBarMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF99E4B1B8DDFEC008F7024 /* TabBarMain.m */; };
-		0FF99E521B8E5D57008F7024 /* UserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF99E511B8E5D57008F7024 /* UserProfile.m */; };
+		0F582B721B90561600077597 /* PickUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F582B711B90561600077597 /* PickUser.m */; };
+		0F582B751B90566200077597 /* APILayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F582B741B90566200077597 /* APILayer.m */; };
+		0F582B781B9056C200077597 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F582B771B9056C200077597 /* Helper.m */; };
+		0F582B7B1B90570D00077597 /* UserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F582B7A1B90570D00077597 /* UserProfile.m */; };
+		0F582B7E1B90575C00077597 /* puLoginRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F582B7D1B90575C00077597 /* puLoginRegister.m */; };
+		0F582B811B9057A300077597 /* TabBarMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F582B801B9057A300077597 /* TabBarMain.m */; };
 		0FFEBFEE1B8B0E21006F8DA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FFEBFED1B8B0E21006F8DA6 /* main.m */; };
 		0FFEBFF11B8B0E21006F8DA6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FFEBFF01B8B0E21006F8DA6 /* AppDelegate.m */; };
 		0FFEBFF71B8B0E21006F8DA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FFEBFF51B8B0E21006F8DA6 /* Main.storyboard */; };
@@ -35,20 +35,20 @@
 
 /* Begin PBXFileReference section */
 		0F3638AE1B8C4DAE00CD1A86 /* mCV.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mCV.plist; sourceTree = "<group>"; };
-		0F3638B01B8C503000CD1A86 /* PickUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickUser.h; sourceTree = "<group>"; };
-		0F3638B11B8C503000CD1A86 /* PickUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickUser.m; sourceTree = "<group>"; };
-		0F3638B31B8C539800CD1A86 /* puLoginRegister.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = puLoginRegister.h; sourceTree = "<group>"; };
-		0F3638B41B8C539800CD1A86 /* puLoginRegister.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = puLoginRegister.m; sourceTree = "<group>"; };
 		0F3638B81B8C70D100CD1A86 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		0F3638B91B8C75E500CD1A86 /* APILayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APILayer.h; sourceTree = "<group>"; };
-		0F3638BA1B8C75E500CD1A86 /* APILayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APILayer.m; sourceTree = "<group>"; };
-		0F3638BC1B8C776000CD1A86 /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
-		0F3638BD1B8C776000CD1A86 /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
 		0F3638BF1B8C78E700CD1A86 /* mCV.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mCV.pch; sourceTree = "<group>"; };
-		0FF99E4A1B8DDFEC008F7024 /* TabBarMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarMain.h; sourceTree = "<group>"; };
-		0FF99E4B1B8DDFEC008F7024 /* TabBarMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarMain.m; sourceTree = "<group>"; };
-		0FF99E501B8E5D57008F7024 /* UserProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfile.h; sourceTree = "<group>"; };
-		0FF99E511B8E5D57008F7024 /* UserProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfile.m; sourceTree = "<group>"; };
+		0F582B701B90561600077597 /* PickUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickUser.h; sourceTree = "<group>"; };
+		0F582B711B90561600077597 /* PickUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickUser.m; sourceTree = "<group>"; };
+		0F582B731B90566200077597 /* APILayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APILayer.h; sourceTree = "<group>"; };
+		0F582B741B90566200077597 /* APILayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APILayer.m; sourceTree = "<group>"; };
+		0F582B761B9056C200077597 /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
+		0F582B771B9056C200077597 /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
+		0F582B791B90570D00077597 /* UserProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfile.h; sourceTree = "<group>"; };
+		0F582B7A1B90570D00077597 /* UserProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfile.m; sourceTree = "<group>"; };
+		0F582B7C1B90575C00077597 /* puLoginRegister.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = puLoginRegister.h; sourceTree = "<group>"; };
+		0F582B7D1B90575C00077597 /* puLoginRegister.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = puLoginRegister.m; sourceTree = "<group>"; };
+		0F582B7F1B9057A300077597 /* TabBarMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarMain.h; sourceTree = "<group>"; };
+		0F582B801B9057A300077597 /* TabBarMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarMain.m; sourceTree = "<group>"; };
 		0FFEBFE81B8B0E21006F8DA6 /* mCV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mCV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FFEBFEC1B8B0E21006F8DA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FFEBFED1B8B0E21006F8DA6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -84,6 +84,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F582B6C1B9055DD00077597 /* APILayer */ = {
+			isa = PBXGroup;
+			children = (
+				0F582B731B90566200077597 /* APILayer.h */,
+				0F582B741B90566200077597 /* APILayer.m */,
+			);
+			path = APILayer;
+			sourceTree = "<group>";
+		};
+		0F582B6D1B9055DD00077597 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0F582B761B9056C200077597 /* Helper.h */,
+				0F582B771B9056C200077597 /* Helper.m */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		0F582B6E1B9055DD00077597 /* PickUser */ = {
+			isa = PBXGroup;
+			children = (
+				0F582B701B90561600077597 /* PickUser.h */,
+				0F582B711B90561600077597 /* PickUser.m */,
+			);
+			path = PickUser;
+			sourceTree = "<group>";
+		};
+		0F582B6F1B9055DD00077597 /* PrivateUser */ = {
+			isa = PBXGroup;
+			children = (
+				0F582B791B90570D00077597 /* UserProfile.h */,
+				0F582B7A1B90570D00077597 /* UserProfile.m */,
+				0F582B7C1B90575C00077597 /* puLoginRegister.h */,
+				0F582B7D1B90575C00077597 /* puLoginRegister.m */,
+				0F582B7F1B9057A300077597 /* TabBarMain.h */,
+				0F582B801B9057A300077597 /* TabBarMain.m */,
+			);
+			path = PrivateUser;
+			sourceTree = "<group>";
+		};
 		0FFEBFDF1B8B0E21006F8DA6 = {
 			isa = PBXGroup;
 			children = (
@@ -108,18 +148,10 @@
 			isa = PBXGroup;
 			children = (
 				0FFEBFF51B8B0E21006F8DA6 /* Main.storyboard */,
-				0FF99E501B8E5D57008F7024 /* UserProfile.h */,
-				0FF99E511B8E5D57008F7024 /* UserProfile.m */,
-				0FF99E4A1B8DDFEC008F7024 /* TabBarMain.h */,
-				0FF99E4B1B8DDFEC008F7024 /* TabBarMain.m */,
-				0F3638B31B8C539800CD1A86 /* puLoginRegister.h */,
-				0F3638B41B8C539800CD1A86 /* puLoginRegister.m */,
-				0F3638B01B8C503000CD1A86 /* PickUser.h */,
-				0F3638B11B8C503000CD1A86 /* PickUser.m */,
-				0F3638B91B8C75E500CD1A86 /* APILayer.h */,
-				0F3638BA1B8C75E500CD1A86 /* APILayer.m */,
-				0F3638BC1B8C776000CD1A86 /* Helper.h */,
-				0F3638BD1B8C776000CD1A86 /* Helper.m */,
+				0F582B6E1B9055DD00077597 /* PickUser */,
+				0F582B6F1B9055DD00077597 /* PrivateUser */,
+				0F582B6C1B9055DD00077597 /* APILayer */,
+				0F582B6D1B9055DD00077597 /* Helpers */,
 				0FFEBFF81B8B0E21006F8DA6 /* Images.xcassets */,
 				0FFEBFFA1B8B0E21006F8DA6 /* LaunchScreen.xib */,
 				0FFEBFEB1B8B0E21006F8DA6 /* Supporting Files */,
@@ -311,14 +343,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F582B7B1B90570D00077597 /* UserProfile.m in Sources */,
 				0FFEBFF11B8B0E21006F8DA6 /* AppDelegate.m in Sources */,
-				0F3638BE1B8C776000CD1A86 /* Helper.m in Sources */,
-				0FF99E521B8E5D57008F7024 /* UserProfile.m in Sources */,
-				0FF99E4C1B8DDFEC008F7024 /* TabBarMain.m in Sources */,
+				0F582B811B9057A300077597 /* TabBarMain.m in Sources */,
 				0FFEBFEE1B8B0E21006F8DA6 /* main.m in Sources */,
-				0F3638B21B8C503000CD1A86 /* PickUser.m in Sources */,
-				0F3638BB1B8C75E500CD1A86 /* APILayer.m in Sources */,
-				0F3638B51B8C539800CD1A86 /* puLoginRegister.m in Sources */,
+				0F582B751B90566200077597 /* APILayer.m in Sources */,
+				0F582B7E1B90575C00077597 /* puLoginRegister.m in Sources */,
+				0F582B781B9056C200077597 /* Helper.m in Sources */,
+				0F582B721B90561600077597 /* PickUser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

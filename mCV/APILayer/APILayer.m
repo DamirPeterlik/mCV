@@ -15,8 +15,8 @@
 +(void)registerUserWithUserName:(NSString *)userName
                       withemail:(NSString*)email
                     andPassword:(NSString*)password
-         withSucces:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
-         andFailure:(void (^)(NSError *error))failure
+                     withSucces:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+                     andFailure:(void (^)(NSError *error))failure
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSString *url = [Helper getValueFromPlistForKey:kConfigAPIRegisterURL];
@@ -44,8 +44,8 @@
 }
 
 +(void)getImageWithUserID:(NSString *)userID
-                  withSucces:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
-                  andFailure:(void (^)(NSError *error))failure
+               withSucces:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+               andFailure:(void (^)(NSError *error))failure
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
@@ -67,7 +67,7 @@
 /*
  
  // NSString *url = @"http://probaairmcv.site40.net/mCV/new1.php?email=%@&userName=%@&password=%@";
-
+ 
  prouciti drugi nacin
  
  NSDictionary *parameters = @{@"userName":userName,

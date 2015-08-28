@@ -23,9 +23,9 @@
 {
     //NSString *path = [[NSBundle mainBundle] pathForResource:kDefaultConfigFile ofType:@"plist"];
     NSString *appPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"mCV.plist"];
-
+    
     //[NSDictionary dictionaryWithContentsOfFile:appPath];
-
+    
     NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:appPath];
     
     NSString *value = [dict objectForKey:key];

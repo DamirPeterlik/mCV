@@ -42,7 +42,7 @@
     buttonDesign.layer.borderColor = [UIColor blueColor].CGColor;
     buttonDesign.layer.borderWidth = 1.0f;
     //za dizajniranje bordera za buton, istraziti ak bude vremena
-   
+    
     //EXIT tab bar buton
     UIBarButtonItem *exit = [[UIBarButtonItem alloc] initWithTitle:@"Exit"
                                                              style:UIBarButtonItemStyleDone
@@ -56,12 +56,12 @@
                                                                   style:UIBarButtonItemStyleDone
                                                                  target:self
                                                                  action:@selector(pushPick:)];
-
+    
     UIBarButtonItem *uploadImage = [[UIBarButtonItem alloc] initWithTitle:@"Upload"
                                                                     style:UIBarButtonItemStyleDone
                                                                    target:self
                                                                    action:@selector(pushUpload:)];
-   
+    
     NSArray *tabBarButtonArray = [[NSArray alloc] initWithObjects:pickImage, uploadImage, nil];
     self.tabBarController.navigationItem.rightBarButtonItems = tabBarButtonArray;
     
@@ -83,7 +83,7 @@
 - (void)pushUpload:(id)sender
 {
     NSData *imageData = UIImageJPEGRepresentation(self.userImg.image, 0.9);
-  
+    
     if (!imageData)
     {
         NSLog(@"Nema slike \n\n");
@@ -94,13 +94,13 @@
         [noImage show];
     }else{
         NSLog(@"Ima slike \n");
-     
+        
         self.activityIndicator.hidden = NO;
         [self.activityIndicator startAnimating];
         
         KeychainItemWrapper *user = [[KeychainItemWrapper alloc] initWithIdentifier:@"token" accessGroup:nil];
         NSLog(@"\n User data - name - %@, ID - %@", [user objectForKey:(__bridge id)(kSecAttrAccount)], [user objectForKey:(__bridge id)(kSecValueData)]);
-
+        
         NSString *userName = [user objectForKey:(__bridge id)(kSecAttrAccount)];
         NSString *userID = [user objectForKey:(__bridge id)(kSecValueData)];
         
@@ -111,46 +111,46 @@
         
         AFHTTPRequestOperation *operation = [manager POST:stringUrl parameters:nil
                                 constructingBodyWithBlock:^(id<AFMultipartFormData> formData)
-                    {
-                   [formData appendPartWithFileData:imageData
-                                               name:@"userfile"
-                                           fileName:@"userfile"
-                                           mimeType:@"image/jpeg"];
-                                  //userfile - kako smo nazvali u php sliku
-                    } success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                    NSLog(@"\n\nResponse: %@,\n**** %@\n\n", responseObject, operation.responseString.description);
-                        [self.activityIndicator performSelectorOnMainThread:@selector(stopAnimating) withObject:nil waitUntilDone:YES];
-                        
-                        [self.activityIndicator stopAnimating];
-                        self.activityIndicator.hidesWhenStopped = YES;
-                        
-                        UIAlertView *imageOK = [[UIAlertView alloc] initWithTitle:@"Bravo!"
-                                                                          message:@"Slika je spremljena!"
-                                                                         delegate:self
-                                                                cancelButtonTitle:@"Ok!"
-                                                                otherButtonTitles:nil];
-
+                                             {
+                                                 [formData appendPartWithFileData:imageData
+                                                                             name:@"userfile"
+                                                                         fileName:@"userfile"
+                                                                         mimeType:@"image/jpeg"];
+                                                 //userfile - kako smo nazvali u php sliku
+                                             } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                                                 NSLog(@"\n\nResponse: %@,\n**** %@\n\n", responseObject, operation.responseString.description);
+                                                 [self.activityIndicator performSelectorOnMainThread:@selector(stopAnimating) withObject:nil waitUntilDone:YES];
+                                                 
+                                                 [self.activityIndicator stopAnimating];
+                                                 self.activityIndicator.hidesWhenStopped = YES;
+                                                 
+                                                 UIAlertView *imageOK = [[UIAlertView alloc] initWithTitle:@"Bravo!"
+                                                                                                   message:@"Slika je spremljena!"
+                                                                                                  delegate:self
+                                                                                         cancelButtonTitle:@"Ok!"
+                                                                                         otherButtonTitles:nil];
+                                                 
                                                  [imageOK show];
                                                  
-                        self.userImg.layer.borderWidth = 5.0f;
-                        self.userImg.layer.cornerRadius = 100;
-                        self.userImg.layer.masksToBounds = YES;
-                        self.userImg.layer.borderColor = [[UIColor blueColor] CGColor];
+                                                 self.userImg.layer.borderWidth = 5.0f;
+                                                 self.userImg.layer.cornerRadius = 100;
+                                                 self.userImg.layer.masksToBounds = YES;
+                                                 self.userImg.layer.borderColor = [[UIColor blueColor] CGColor];
                                                  
-                    }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                        NSLog(@"\n\nError for failure: %@,\n**** %@\n\n", operation.responseString, error);
-                        [self.activityIndicator performSelectorOnMainThread:@selector(stopAnimating) withObject:nil waitUntilDone:YES];
-                        
-                        [self.activityIndicator stopAnimating];
-                        self.activityIndicator.hidesWhenStopped = YES;
-                        
-                        UIAlertView *error1 = [[UIAlertView alloc] initWithTitle:@"Greska!"
-                                                                         message:@"Provjerite internet!"
-                                                                        delegate:self
-                                                               cancelButtonTitle:@"Ok!"
-                                                               otherButtonTitles:nil];
-                        [error1 show];
-                    }];
+                                             }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                                 NSLog(@"\n\nError for failure: %@,\n**** %@\n\n", operation.responseString, error);
+                                                 [self.activityIndicator performSelectorOnMainThread:@selector(stopAnimating) withObject:nil waitUntilDone:YES];
+                                                 
+                                                 [self.activityIndicator stopAnimating];
+                                                 self.activityIndicator.hidesWhenStopped = YES;
+                                                 
+                                                 UIAlertView *error1 = [[UIAlertView alloc] initWithTitle:@"Greska!"
+                                                                                                  message:@"Provjerite internet!"
+                                                                                                 delegate:self
+                                                                                        cancelButtonTitle:@"Ok!"
+                                                                                        otherButtonTitles:nil];
+                                                 [error1 show];
+                                             }];
         [operation start];
     }
 }
@@ -207,10 +207,10 @@
                           NSString *imageLink = [responseObject objectForKey:@"imageLink"];
                           NSLog(@"Image link: %@", imageLink);
                           [self.userImg sd_setImageWithURL:[NSURL URLWithString:imageLink]
-                                            placeholderImage:nil
-                                                   completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL)
+                                          placeholderImage:nil
+                                                 completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL)
                            {
-
+                               
                                if(!error)
                                {
                                    NSLog(@"Ima linka za sliku");
@@ -230,16 +230,16 @@
                                
                                
                            }];
-                      
+                          
                       } andFailure:^(NSError *error) {
                           
                           NSLog(@"Error %@", error);
                           [self.activityIndicator stopAnimating];
                           self.activityIndicator.hidesWhenStopped = YES;
                           
-        
-        
-    }];
+                          
+                          
+                      }];
     
     //[UIImage imageNamed:@"imgPlaceholder"]
     
