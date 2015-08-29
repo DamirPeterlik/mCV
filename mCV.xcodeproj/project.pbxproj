@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0F3638AF1B8C4DAE00CD1A86 /* mCV.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F3638AE1B8C4DAE00CD1A86 /* mCV.plist */; };
+		0F49A8361B91A62F00A62D2D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F49A8351B91A62F00A62D2D /* User.m */; };
+		0F49A8391B91A6A800A62D2D /* Configuration.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F49A8381B91A6A800A62D2D /* Configuration.m */; };
 		0F582B721B90561600077597 /* PickUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F582B711B90561600077597 /* PickUser.m */; };
 		0F582B751B90566200077597 /* APILayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F582B741B90566200077597 /* APILayer.m */; };
 		0F582B781B9056C200077597 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F582B771B9056C200077597 /* Helper.m */; };
@@ -38,6 +40,10 @@
 		0F3638AE1B8C4DAE00CD1A86 /* mCV.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mCV.plist; sourceTree = "<group>"; };
 		0F3638B81B8C70D100CD1A86 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		0F3638BF1B8C78E700CD1A86 /* mCV.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mCV.pch; sourceTree = "<group>"; };
+		0F49A8341B91A62F00A62D2D /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		0F49A8351B91A62F00A62D2D /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		0F49A8371B91A6A800A62D2D /* Configuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Configuration.h; sourceTree = "<group>"; };
+		0F49A8381B91A6A800A62D2D /* Configuration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Configuration.m; sourceTree = "<group>"; };
 		0F582B701B90561600077597 /* PickUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickUser.h; sourceTree = "<group>"; };
 		0F582B711B90561600077597 /* PickUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickUser.m; sourceTree = "<group>"; };
 		0F582B731B90566200077597 /* APILayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APILayer.h; sourceTree = "<group>"; };
@@ -87,6 +93,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F49A8331B91A61B00A62D2D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0F49A8341B91A62F00A62D2D /* User.h */,
+				0F49A8351B91A62F00A62D2D /* User.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		0F582B6C1B9055DD00077597 /* APILayer */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				0FFEBFF51B8B0E21006F8DA6 /* Main.storyboard */,
+				0F49A8331B91A61B00A62D2D /* Models */,
 				0F582B6E1B9055DD00077597 /* PickUser */,
 				0F582B6F1B9055DD00077597 /* PrivateUser */,
 				0F582B6C1B9055DD00077597 /* APILayer */,
@@ -169,6 +185,8 @@
 				0FFEBFFA1B8B0E21006F8DA6 /* LaunchScreen.xib */,
 				0FFEBFEB1B8B0E21006F8DA6 /* Supporting Files */,
 				0F3638B81B8C70D100CD1A86 /* Constants.h */,
+				0F49A8371B91A6A800A62D2D /* Configuration.h */,
+				0F49A8381B91A6A800A62D2D /* Configuration.m */,
 			);
 			path = mCV;
 			sourceTree = "<group>";
@@ -356,6 +374,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F49A8361B91A62F00A62D2D /* User.m in Sources */,
 				0F582B7B1B90570D00077597 /* UserProfile.m in Sources */,
 				0F582B851B90877A00077597 /* getJobs.m in Sources */,
 				0FFEBFF11B8B0E21006F8DA6 /* AppDelegate.m in Sources */,
@@ -365,6 +384,7 @@
 				0F582B7E1B90575C00077597 /* puLoginRegister.m in Sources */,
 				0F582B781B9056C200077597 /* Helper.m in Sources */,
 				0F582B721B90561600077597 /* PickUser.m in Sources */,
+				0F49A8391B91A6A800A62D2D /* Configuration.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

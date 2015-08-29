@@ -11,7 +11,6 @@
 #import "Constants.h"
 #import "TabBarMain.h"
 
-
 @interface puLoginRegister ()
 
 @end
@@ -220,7 +219,7 @@
                             withSucces:^(AFHTTPRequestOperation *operation, id responseObject)
      {
          NSLog(@"Succes!");
-         NSLog(@"Response: %@", responseObject);
+         NSLog(@"Response REGISTRACIJE: %@", responseObject);
          
          NSString *userID = [[responseObject objectForKey:@"ID"] valueForKey:@"userID"];
          NSLog(@"User ID - %@", userID);

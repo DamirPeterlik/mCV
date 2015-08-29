@@ -10,7 +10,8 @@
 #import <AFNetworking/AFNetworking.h>
 #import "APILayer.h"
 #import <SDWebImage/UIImageView+WebCache.h>
-
+#import "User.h"
+#import "Configuration.h"
 
 @interface UserProfile ()
 
@@ -200,6 +201,28 @@
     
     [APILayer getImageWithUserID:userID
                       withSucces:^(AFHTTPRequestOperation *operation, id responseObject) {
+                          
+                          
+                          //______NOVO____PROBA____CONFIGURATION&USER_______//
+                          
+                          NSLog(@"----Proba!!!----");
+                          
+                        //  NSDictionary *userDict = responseObject[kApiResponseConstant];
+                          NSError *error = nil;
+                          User *userNew = [[User alloc]initWithDictionary:responseObject error:&error];
+                          
+                          if(error==nil)
+                          {
+                              Configuration *config = [Configuration sharedConfiguration];
+                              config.user = userNew;
+                              
+                              NSLog(@"Serialization OK! User: %@",userNew);
+                          }
+                          else{
+                              NSLog(@"Serialization Failed!ERROR:%@",error);
+                          }
+                          
+                          //______NOVO____PROBA____CONFIGURATION&USER_______//
                           
                           NSLog(@"Success");
                           NSLog(@"Get image data - %@", responseObject);

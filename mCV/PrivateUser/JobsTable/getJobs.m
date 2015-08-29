@@ -9,8 +9,13 @@
 #import "getJobs.h"
 #import <AFNetworking/AFNetworking.h>
 #import "APILayer.h"
+#import "User.h"
+#import "Configuration.h"
 
 @interface getJobs ()
+
+@property (nonatomic,strong) Configuration *config;
+
 
 @end
 
@@ -25,6 +30,18 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    self.config = [Configuration sharedConfiguration];
+    NSLog(@"\nPodatci od usera, user ID: %@", self.config.user.userID);
+    NSLog(@"\nPodatci od usera, user name: %@", self.config.user.userName);
+    NSLog(@"\nPodatci od usera, user email: %@", self.config.user.email);
+    //NSLog(@"\nPodatci od usera, user forename: %@", self.config.user.userForename);
+    
 }
 
 - (void)didReceiveMemoryWarning {
