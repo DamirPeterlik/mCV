@@ -35,12 +35,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
-    self.config = [Configuration sharedConfiguration];
-    NSLog(@"\nPodatci od usera, user ID: %@", self.config.user.userID);
-    NSLog(@"\nPodatci od usera, user name: %@", self.config.user.userName);
-    NSLog(@"\nPodatci od usera, user email: %@", self.config.user.email);
-    //NSLog(@"\nPodatci od usera, user forename: %@", self.config.user.userForename);
+    NSLog(@"view did appear");
     
 }
 
@@ -124,6 +119,14 @@
     [APILayer getJobsWithjobUrl:nil
                      withSucces:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"response: %@", responseObject);
+                         
+                         
+                         self.config = [Configuration sharedConfiguration];
+                         NSLog(@"\nPodatci od usera, user ID: %@", self.config.user.userID);
+                         NSLog(@"\nPodatci od usera, user name: %@", self.config.user.userName);
+                         NSLog(@"\nPodatci od usera, user email: %@", self.config.user.email);
+                         //NSLog(@"\nPodatci od usera, user forename: %@", self.config.user.userForename);
+                         
                      
                      } andFailure:^(NSError *error) {
         NSLog(@"error: %@", error);

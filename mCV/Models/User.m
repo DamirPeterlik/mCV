@@ -26,7 +26,8 @@
     
     return [[JSONKeyMapper alloc] initWithDictionary:@{@"email": @"",
                                                         @"userID": @"",
-                                                         @"userName": @""}];
+                                                         @"userName": @"",
+                                                          @"userForename": @""}];
 }
 
 @end

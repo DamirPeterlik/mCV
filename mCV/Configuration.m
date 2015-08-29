@@ -18,6 +18,9 @@
     dispatch_once(&onceToken, ^{
         configuration = [[Configuration alloc]init];
     });
+
     return  configuration;
+    
 }
+
 @end

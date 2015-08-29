@@ -225,7 +225,7 @@
                           //______NOVO____PROBA____CONFIGURATION&USER_______//
                           
                           NSLog(@"Success");
-                          NSLog(@"Get image data - %@", responseObject);
+                          NSLog(@"Get image data - \n%@", responseObject);
                           
                           NSString *imageLink = [responseObject objectForKey:@"imageLink"];
                           NSLog(@"Image link: %@", imageLink);
