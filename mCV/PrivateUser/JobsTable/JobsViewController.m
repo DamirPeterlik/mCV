@@ -18,6 +18,8 @@
 
 @property (nonatomic,weak) IBOutlet UITableView *tableView;
 @property (nonatomic,strong) NSMutableArray *datasource;
+@property (nonatomic,strong) UIRefreshControl *refreshControl;
+
 
 @end
 
@@ -34,14 +36,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+
     self.navigationItem.backBarButtonItem = nil;
     self.navigationItem.hidesBackButton = YES;
 
     self.navItem.title = @"Job/Posao";
     
-    
+    self.refreshControl = [[UIRefreshControl alloc]init];
+    [self.tableView addSubview:self.refreshControl];
+    [self.refreshControl addTarget:self action:@selector(refreshContent) forControlEvents:UIControlEventValueChanged];
+    [self refreshContent];
     // Do any additional setup after loading the view.
     [self getJobs];
+}
+
+-(void)refreshContent
+{
+
+    [self getJobs];
+    [self.refreshControl setEnabled:NO];
+    NSLog(@"Refresh");
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -81,7 +97,7 @@
 
 - (void) getJobs
 {
-    
+
     NSLog(@"getjobs starting");
     //NSString *url = @"";
     
@@ -93,13 +109,17 @@
                          NSArray *responsPosts = [responseObject objectForKey:@"result"];
                          NSError *error = nil;
 
+
                          NSLog(@"response: %@", responsPosts);
                          self.datasource = [JobData arrayOfModelsFromDictionaries:responsPosts error:&error];
                          [self.tableView reloadData];
-                         
+                         [self.refreshControl setEnabled:YES];
+                         [self.refreshControl endRefreshing];
                          
                      } andFailure:^(NSError *error) {
                          NSLog(@"error: %@", error);
+                         [self.refreshControl setEnabled:NO];
+
                      }];
     
 }
@@ -121,6 +141,8 @@
     }
     
     JobData *job = [self.datasource objectAtIndex:indexPath.row];
+    
+    
     
     cell.jobTitle.text = job.jobTitle;
     cell.jobDescription.text = job.jobDetail;

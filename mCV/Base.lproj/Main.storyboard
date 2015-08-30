@@ -358,9 +358,13 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="YZk-UJ-mjp">
+                                                    <rect key="frame" x="177" y="23" width="20" height="20"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="activityIndicator" destination="YZk-UJ-mjp" id="FfK-Kr-Dea"/>
                                             <outlet property="jobDescription" destination="XdT-6Y-lH2" id="eB3-RU-phy"/>
                                             <outlet property="jobTitle" destination="dcI-qA-r79" id="65Q-uc-FRR"/>
                                         </connections>
