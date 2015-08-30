@@ -10,13 +10,15 @@
 		0F3638AF1B8C4DAE00CD1A86 /* mCV.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F3638AE1B8C4DAE00CD1A86 /* mCV.plist */; };
 		0F49A8361B91A62F00A62D2D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F49A8351B91A62F00A62D2D /* User.m */; };
 		0F49A8391B91A6A800A62D2D /* Configuration.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F49A8381B91A6A800A62D2D /* Configuration.m */; };
+		0F49A83C1B91CEDA00A62D2D /* getJobCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F49A83B1B91CEDA00A62D2D /* getJobCell.m */; };
 		0F582B721B90561600077597 /* PickUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F582B711B90561600077597 /* PickUser.m */; };
 		0F582B751B90566200077597 /* APILayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F582B741B90566200077597 /* APILayer.m */; };
 		0F582B781B9056C200077597 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F582B771B9056C200077597 /* Helper.m */; };
 		0F582B7B1B90570D00077597 /* UserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F582B7A1B90570D00077597 /* UserProfile.m */; };
 		0F582B7E1B90575C00077597 /* puLoginRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F582B7D1B90575C00077597 /* puLoginRegister.m */; };
 		0F582B811B9057A300077597 /* TabBarMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F582B801B9057A300077597 /* TabBarMain.m */; };
-		0F582B851B90877A00077597 /* getJobs.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F582B841B90877A00077597 /* getJobs.m */; };
+		0FB2B5FE1B93249B005B053C /* JobData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB2B5FD1B93249B005B053C /* JobData.m */; };
+		0FB2B6011B934FF8005B053C /* JobsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB2B6001B934FF8005B053C /* JobsViewController.m */; };
 		0FFEBFEE1B8B0E21006F8DA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FFEBFED1B8B0E21006F8DA6 /* main.m */; };
 		0FFEBFF11B8B0E21006F8DA6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FFEBFF01B8B0E21006F8DA6 /* AppDelegate.m */; };
 		0FFEBFF71B8B0E21006F8DA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FFEBFF51B8B0E21006F8DA6 /* Main.storyboard */; };
@@ -44,6 +46,8 @@
 		0F49A8351B91A62F00A62D2D /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		0F49A8371B91A6A800A62D2D /* Configuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Configuration.h; sourceTree = "<group>"; };
 		0F49A8381B91A6A800A62D2D /* Configuration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Configuration.m; sourceTree = "<group>"; };
+		0F49A83A1B91CEDA00A62D2D /* getJobCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = getJobCell.h; sourceTree = "<group>"; };
+		0F49A83B1B91CEDA00A62D2D /* getJobCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = getJobCell.m; sourceTree = "<group>"; };
 		0F582B701B90561600077597 /* PickUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickUser.h; sourceTree = "<group>"; };
 		0F582B711B90561600077597 /* PickUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickUser.m; sourceTree = "<group>"; };
 		0F582B731B90566200077597 /* APILayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APILayer.h; sourceTree = "<group>"; };
@@ -56,8 +60,10 @@
 		0F582B7D1B90575C00077597 /* puLoginRegister.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = puLoginRegister.m; sourceTree = "<group>"; };
 		0F582B7F1B9057A300077597 /* TabBarMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarMain.h; sourceTree = "<group>"; };
 		0F582B801B9057A300077597 /* TabBarMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarMain.m; sourceTree = "<group>"; };
-		0F582B831B90877A00077597 /* getJobs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = getJobs.h; sourceTree = "<group>"; };
-		0F582B841B90877A00077597 /* getJobs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = getJobs.m; sourceTree = "<group>"; };
+		0FB2B5FC1B93249B005B053C /* JobData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobData.h; sourceTree = "<group>"; };
+		0FB2B5FD1B93249B005B053C /* JobData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobData.m; sourceTree = "<group>"; };
+		0FB2B5FF1B934FF8005B053C /* JobsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsViewController.h; sourceTree = "<group>"; };
+		0FB2B6001B934FF8005B053C /* JobsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobsViewController.m; sourceTree = "<group>"; };
 		0FFEBFE81B8B0E21006F8DA6 /* mCV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mCV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FFEBFEC1B8B0E21006F8DA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FFEBFED1B8B0E21006F8DA6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -146,10 +152,22 @@
 		0F582B821B90607C00077597 /* JobsTable */ = {
 			isa = PBXGroup;
 			children = (
-				0F582B831B90877A00077597 /* getJobs.h */,
-				0F582B841B90877A00077597 /* getJobs.m */,
+				0F49A83A1B91CEDA00A62D2D /* getJobCell.h */,
+				0F49A83B1B91CEDA00A62D2D /* getJobCell.m */,
+				0FB2B5FF1B934FF8005B053C /* JobsViewController.h */,
+				0FB2B6001B934FF8005B053C /* JobsViewController.m */,
+				0FB2B5FB1B93245D005B053C /* Model */,
 			);
 			path = JobsTable;
+			sourceTree = "<group>";
+		};
+		0FB2B5FB1B93245D005B053C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0FB2B5FC1B93249B005B053C /* JobData.h */,
+				0FB2B5FD1B93249B005B053C /* JobData.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		0FFEBFDF1B8B0E21006F8DA6 = {
@@ -376,11 +394,13 @@
 			files = (
 				0F49A8361B91A62F00A62D2D /* User.m in Sources */,
 				0F582B7B1B90570D00077597 /* UserProfile.m in Sources */,
-				0F582B851B90877A00077597 /* getJobs.m in Sources */,
 				0FFEBFF11B8B0E21006F8DA6 /* AppDelegate.m in Sources */,
 				0F582B811B9057A300077597 /* TabBarMain.m in Sources */,
 				0FFEBFEE1B8B0E21006F8DA6 /* main.m in Sources */,
+				0F49A83C1B91CEDA00A62D2D /* getJobCell.m in Sources */,
 				0F582B751B90566200077597 /* APILayer.m in Sources */,
+				0FB2B6011B934FF8005B053C /* JobsViewController.m in Sources */,
+				0FB2B5FE1B93249B005B053C /* JobData.m in Sources */,
 				0F582B7E1B90575C00077597 /* puLoginRegister.m in Sources */,
 				0F582B781B9056C200077597 /* Helper.m in Sources */,
 				0F582B721B90561600077597 /* PickUser.m in Sources */,

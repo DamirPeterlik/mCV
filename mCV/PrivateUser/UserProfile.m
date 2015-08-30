@@ -15,13 +15,27 @@
 
 @interface UserProfile ()
 
+@property (nonatomic,strong) Configuration *conf;
+
 @end
 
 @implementation UserProfile
 
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    self.navItem.title =@"User profile";
+
     self.userImg.layer.borderWidth = 5.0f;
     self.userImg.layer.cornerRadius = 100;
     self.userImg.layer.masksToBounds = YES;
@@ -30,13 +44,12 @@
     self.activityIndicator.hidden = YES;
     
     [self getUserImage];
+
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
-    self.tabBarController.navigationItem.title =@"User profile";
     
     UIButton *buttonDesign = [UIButton buttonWithType:UIButtonTypeCustom];
     buttonDesign.frame = CGRectMake(10, 0, 30, 30);
@@ -50,7 +63,7 @@
                                                             target:self
                                                             action:@selector(exitBarBtnItem:)];
     
-    self.tabBarController.navigationItem.leftBarButtonItem = exit;
+    self.navItem.leftBarButtonItem = exit;
     
     //pick image bar buton
     UIBarButtonItem *pickImage = [[UIBarButtonItem alloc] initWithTitle:@"Pick"
@@ -64,7 +77,7 @@
                                                                    action:@selector(pushUpload:)];
     
     NSArray *tabBarButtonArray = [[NSArray alloc] initWithObjects:pickImage, uploadImage, nil];
-    self.tabBarController.navigationItem.rightBarButtonItems = tabBarButtonArray;
+    self.navItem.rightBarButtonItems = tabBarButtonArray;
     
 }
 
@@ -224,6 +237,9 @@
                           
                           //______NOVO____PROBA____CONFIGURATION&USER_______//
                           
+                          [self getUserData];
+                          //gets user data, needs to have response of connection to get the data
+                          
                           NSLog(@"Success");
                           NSLog(@"Get image data - \n%@", responseObject);
                           
@@ -267,5 +283,16 @@
     //[UIImage imageNamed:@"imgPlaceholder"]
     
 }
+
+-(void) getUserData
+{
+    self.conf = [Configuration sharedConfiguration];
+    NSLog(@"user name: %@", self.conf.user.userName);
+    NSString *userName = self.conf.user.userName;
+    self.userNameLbl.text = userName;
+    self.userEmailLbl.text = self.conf.user.email;
+    
+}
+
 
 @end

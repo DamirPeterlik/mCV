@@ -49,9 +49,14 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:NO];
+
 }
 
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+
+}
 
 #pragma mark - Actions
 
@@ -79,9 +84,14 @@
 
 -(void) segueTabBar
 {
+    /*
     TabBarMain *vc = [self.storyboard
                       instantiateViewControllerWithIdentifier:@"tabBar"];
     [self.navigationController pushViewController:vc animated:YES];
+    */
+    
+    [self performSegueWithIdentifier:@"loginRegister" sender:self];
+
 }
 
 @end

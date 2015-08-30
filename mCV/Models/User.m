@@ -24,10 +24,10 @@
     return mapper;
     */
     
-    return [[JSONKeyMapper alloc] initWithDictionary:@{@"email": @"",
-                                                        @"userID": @"",
-                                                         @"userName": @"",
-                                                          @"userForename": @""}];
+    return [[JSONKeyMapper alloc] initWithDictionary:@{@"userName": @"",
+                                                        @"imageLink": @"",
+                                                         @"password": @"",
+                                                          @"UserName": @""}];
 }
 
 @end

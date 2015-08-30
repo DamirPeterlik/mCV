@@ -16,3 +16,5 @@
 +(instancetype)sharedConfiguration;
 
 @end
+
+//singleton design patern, ovdje punim podatke za korisnika jer ce mi trebati kroz cijeli app, npr ID korisnika, ime...

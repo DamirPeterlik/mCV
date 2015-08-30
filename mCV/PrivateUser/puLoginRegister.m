@@ -32,7 +32,7 @@
     self.navigationItem.title = @"mCV";
     
     UIBarButtonItem *barButton = [[UIBarButtonItem alloc] init];
-    barButton.title = @"Pick user";
+    barButton.title = @"";
     self.navigationController.navigationBar.topItem.backBarButtonItem = barButton;
     
     self.registerActivityIndicator.hidden = YES;
@@ -157,13 +157,13 @@
 
 -(void) segueTabBar
 {
-    
+    /*
     TabBarMain *vc = [self.storyboard
                       instantiateViewControllerWithIdentifier:@"tabBar"];
     [self.navigationController pushViewController:vc animated:YES];
     
-    
-    //[self performSegueWithIdentifier:@"tabBarSegue" sender:self];
+    */
+    [self performSegueWithIdentifier:@"tabBarSegue" sender:self];
 }
 
 - (IBAction)registerTransitionTabBar:(id)sender
