@@ -17,6 +17,7 @@
 		0F582B7B1B90570D00077597 /* UserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F582B7A1B90570D00077597 /* UserProfile.m */; };
 		0F582B7E1B90575C00077597 /* puLoginRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F582B7D1B90575C00077597 /* puLoginRegister.m */; };
 		0F582B811B9057A300077597 /* TabBarMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F582B801B9057A300077597 /* TabBarMain.m */; };
+		0F7652031B9484C3001C838F /* JobDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F7652021B9484C3001C838F /* JobDetailTableViewController.m */; };
 		0FB2B5FE1B93249B005B053C /* JobData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB2B5FD1B93249B005B053C /* JobData.m */; };
 		0FB2B6011B934FF8005B053C /* JobsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB2B6001B934FF8005B053C /* JobsViewController.m */; };
 		0FFEBFEE1B8B0E21006F8DA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FFEBFED1B8B0E21006F8DA6 /* main.m */; };
@@ -60,6 +61,8 @@
 		0F582B7D1B90575C00077597 /* puLoginRegister.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = puLoginRegister.m; sourceTree = "<group>"; };
 		0F582B7F1B9057A300077597 /* TabBarMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarMain.h; sourceTree = "<group>"; };
 		0F582B801B9057A300077597 /* TabBarMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarMain.m; sourceTree = "<group>"; };
+		0F7652011B9484C3001C838F /* JobDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobDetailTableViewController.h; sourceTree = "<group>"; };
+		0F7652021B9484C3001C838F /* JobDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobDetailTableViewController.m; sourceTree = "<group>"; };
 		0FB2B5FC1B93249B005B053C /* JobData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobData.h; sourceTree = "<group>"; };
 		0FB2B5FD1B93249B005B053C /* JobData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobData.m; sourceTree = "<group>"; };
 		0FB2B5FF1B934FF8005B053C /* JobsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsViewController.h; sourceTree = "<group>"; };
@@ -156,6 +159,8 @@
 				0F49A83B1B91CEDA00A62D2D /* getJobCell.m */,
 				0FB2B5FF1B934FF8005B053C /* JobsViewController.h */,
 				0FB2B6001B934FF8005B053C /* JobsViewController.m */,
+				0F7652011B9484C3001C838F /* JobDetailTableViewController.h */,
+				0F7652021B9484C3001C838F /* JobDetailTableViewController.m */,
 				0FB2B5FB1B93245D005B053C /* Model */,
 			);
 			path = JobsTable;
@@ -398,6 +403,7 @@
 				0F582B811B9057A300077597 /* TabBarMain.m in Sources */,
 				0FFEBFEE1B8B0E21006F8DA6 /* main.m in Sources */,
 				0F49A83C1B91CEDA00A62D2D /* getJobCell.m in Sources */,
+				0F7652031B9484C3001C838F /* JobDetailTableViewController.m in Sources */,
 				0F582B751B90566200077597 /* APILayer.m in Sources */,
 				0FB2B6011B934FF8005B053C /* JobsViewController.m in Sources */,
 				0FB2B5FE1B93249B005B053C /* JobData.m in Sources */,

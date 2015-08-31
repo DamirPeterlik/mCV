@@ -12,6 +12,5 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *jobTitle;
 @property (strong, nonatomic) IBOutlet UILabel *jobDescription;
-@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end

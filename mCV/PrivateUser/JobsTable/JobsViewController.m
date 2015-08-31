@@ -13,6 +13,7 @@
 #import "getJobCell.h"
 #import "Constants.h"
 #import "JobData.h"
+#import "JobDetailTableViewController.h"
 
 @interface JobsViewController () <UITableViewDataSource,UITableViewDelegate>
 
@@ -150,5 +151,14 @@
     return cell;
 
 }
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    JobDetailTableViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"jobDetailVC"];
+    vc.jobModel = [self.datasource objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 
 @end
