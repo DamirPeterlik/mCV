@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F1FDDD81B95930A001629C1 /* ExpandingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F1FDDD71B95930A001629C1 /* ExpandingCell.xib */; };
+		0F1FDDDB1B9594A5001629C1 /* ExpandingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1FDDDA1B9594A5001629C1 /* ExpandingTableViewCell.m */; };
 		0F3638AF1B8C4DAE00CD1A86 /* mCV.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F3638AE1B8C4DAE00CD1A86 /* mCV.plist */; };
 		0F49A8361B91A62F00A62D2D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F49A8351B91A62F00A62D2D /* User.m */; };
 		0F49A8391B91A6A800A62D2D /* Configuration.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F49A8381B91A6A800A62D2D /* Configuration.m */; };
@@ -42,6 +44,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F1FDDD71B95930A001629C1 /* ExpandingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandingCell.xib; sourceTree = "<group>"; };
+		0F1FDDD91B9594A5001629C1 /* ExpandingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpandingTableViewCell.h; sourceTree = "<group>"; };
+		0F1FDDDA1B9594A5001629C1 /* ExpandingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpandingTableViewCell.m; sourceTree = "<group>"; };
 		0F3638AE1B8C4DAE00CD1A86 /* mCV.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mCV.plist; sourceTree = "<group>"; };
 		0F3638B81B8C70D100CD1A86 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		0F3638BF1B8C78E700CD1A86 /* mCV.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mCV.pch; sourceTree = "<group>"; };
@@ -108,6 +113,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F1FDDD61B9592D8001629C1 /* Expanding cell */ = {
+			isa = PBXGroup;
+			children = (
+				0F1FDDD91B9594A5001629C1 /* ExpandingTableViewCell.h */,
+				0F1FDDDA1B9594A5001629C1 /* ExpandingTableViewCell.m */,
+				0F1FDDD71B95930A001629C1 /* ExpandingCell.xib */,
+			);
+			path = "Expanding cell";
+			sourceTree = "<group>";
+		};
 		0F49A8331B91A61B00A62D2D /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +183,7 @@
 				0FB2B6001B934FF8005B053C /* JobsViewController.m */,
 				0F7652011B9484C3001C838F /* JobDetailTableViewController.h */,
 				0F7652021B9484C3001C838F /* JobDetailTableViewController.m */,
+				0F1FDDD61B9592D8001629C1 /* Expanding cell */,
 				0FB2B5FB1B93245D005B053C /* Model */,
 			);
 			path = JobsTable;
@@ -362,6 +378,7 @@
 			files = (
 				0FFEBFF71B8B0E21006F8DA6 /* Main.storyboard in Resources */,
 				0F3638AF1B8C4DAE00CD1A86 /* mCV.plist in Resources */,
+				0F1FDDD81B95930A001629C1 /* ExpandingCell.xib in Resources */,
 				0FFEBFFC1B8B0E21006F8DA6 /* LaunchScreen.xib in Resources */,
 				0FFEBFF91B8B0E21006F8DA6 /* Images.xcassets in Resources */,
 			);
@@ -418,6 +435,7 @@
 				0F582B7B1B90570D00077597 /* UserProfile.m in Sources */,
 				0FFEBFF11B8B0E21006F8DA6 /* AppDelegate.m in Sources */,
 				0F582B811B9057A300077597 /* TabBarMain.m in Sources */,
+				0F1FDDDB1B9594A5001629C1 /* ExpandingTableViewCell.m in Sources */,
 				0FFEBFEE1B8B0E21006F8DA6 /* main.m in Sources */,
 				0F49A83C1B91CEDA00A62D2D /* getJobCell.m in Sources */,
 				0F7652031B9484C3001C838F /* JobDetailTableViewController.m in Sources */,

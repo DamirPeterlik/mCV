@@ -32,7 +32,7 @@
                                                        @"latitude": @"",
                                                        @"longitude": @""}];
 }
-*/
+
 
 -(void) setValue:(id)value forUndefinedKey:(NSString *)key
 {
@@ -55,4 +55,5 @@
         [super setValue:value forKey:key];
 }
 
+ */
 @end

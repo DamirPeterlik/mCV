@@ -23,5 +23,9 @@
 
 @property (strong,nonatomic) JobData *jobModel;
 
+//
+@property int selectedRow;
+@property int isBtn;
+
 
 @end
