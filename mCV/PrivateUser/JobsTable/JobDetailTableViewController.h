@@ -13,12 +13,12 @@
 
 @interface JobDetailTableViewController : UITableViewController
 
+@property (nonatomic, strong) NSString *jobUrlString;
 
 @property (strong, nonatomic) IBOutlet UILabel *jobTitleLbl;
 @property (strong, nonatomic) IBOutlet UILabel *jobDetailLbl;
-
 @property (strong, nonatomic) IBOutlet UILabel *jobLocation;
-
+@property (strong, nonatomic) IBOutlet UIButton *jobUrl;
 @property (nonatomic, strong) NSMutableArray *jobTitleMarray;
 
 @property (strong,nonatomic) JobData *jobModel;
@@ -27,5 +27,6 @@
 @property int selectedRow;
 @property int isBtn;
 
+-(IBAction)openJobUrl:(id)sender;
 
 @end

@@ -24,12 +24,14 @@
     
 }
 @property (nonatomic,weak) IBOutlet UITableView *tableView;
-//@property (nonatomic,strong) NSMutableArray *datasource;
-@property (nonatomic,strong) NSArray *datasource;
+@property (nonatomic,strong) NSMutableArray *datasource;
+//@property (nonatomic,strong) NSArray *datasource;
 
 @property (nonatomic,strong) UIRefreshControl *refreshControl;
 //@property (nonatomic, strong) int *selectedIndex;
 @property (nonatomic,strong) UIButton *jobInfoBtn;
+
+@property (nonatomic, strong) NSMutableArray *favorites;
 
 @end
 
@@ -60,6 +62,13 @@
     [self refreshContent];
     // Do any additional setup after loading the view.
     [self getJobs];
+    
+    //proba favorites
+
+    
+    
+    
+    
 }
 
 -(void)refreshContent
@@ -164,7 +173,7 @@
     cell.jobTitleExp.text = job.jobTitle;
     cell.jobDescriptionExp.text = job.jobDetail;
     cell.jobGroupExp.text = job.jobGroup;
-    cell.jobGroupExp.hidden = YES;
+    cell.jobDescriptionExp.hidden = YES;
     
     self.jobInfoBtn = cell.jobInfoExp;
     self.jobInfoBtn.tag = indexPath.row;
@@ -177,7 +186,7 @@
         cell.jobTitleExp.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:17];
         cell.jobDescriptionExp.textColor = [UIColor whiteColor];
         cell.jobGroupExp.textColor = [UIColor whiteColor];
-        cell.jobGroupExp.hidden = NO;
+        cell.jobDescriptionExp.hidden = NO;
 
     }
     else {
@@ -207,6 +216,7 @@
     
     
     return cell;
+    
 
 }
 
@@ -226,7 +236,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+
     if(selectedIndex == indexPath.row)
     {
         selectedIndex = -1;
@@ -245,6 +255,10 @@
     selectedIndex = indexPath.row;
     [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     
+    //favorites proba
+
+
+    
 }
 
 -(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
@@ -256,6 +270,21 @@
     
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        //remove the deleted object from your data source.
+        //If your data source is an NSMutableArray, do this
+        [self.datasource removeObjectAtIndex:indexPath.row];
+        [tableView reloadData]; // tell table to refresh now
+    
+       } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+    }
+
+}
 
 
 @end

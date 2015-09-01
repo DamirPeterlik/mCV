@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0F1FDDD81B95930A001629C1 /* ExpandingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F1FDDD71B95930A001629C1 /* ExpandingCell.xib */; };
 		0F1FDDDB1B9594A5001629C1 /* ExpandingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1FDDDA1B9594A5001629C1 /* ExpandingTableViewCell.m */; };
+		0F1FDDDE1B95C7A2001629C1 /* JobUrlWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1FDDDD1B95C7A2001629C1 /* JobUrlWebViewController.m */; };
 		0F3638AF1B8C4DAE00CD1A86 /* mCV.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F3638AE1B8C4DAE00CD1A86 /* mCV.plist */; };
 		0F49A8361B91A62F00A62D2D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F49A8351B91A62F00A62D2D /* User.m */; };
 		0F49A8391B91A6A800A62D2D /* Configuration.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F49A8381B91A6A800A62D2D /* Configuration.m */; };
@@ -22,6 +23,8 @@
 		0F7652031B9484C3001C838F /* JobDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F7652021B9484C3001C838F /* JobDetailTableViewController.m */; };
 		0F7652051B94A9D0001C838F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F7652041B94A9D0001C838F /* MapKit.framework */; };
 		0F7652091B94AA3B001C838F /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F7652081B94AA3B001C838F /* MapViewController.m */; };
+		0FA0F3D71B95EFAC003010D2 /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA0F3D61B95EFAC003010D2 /* FavoritesViewController.m */; };
+		0FA0F3DD1B95F0E2003010D2 /* FavoritesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA0F3DC1B95F0E2003010D2 /* FavoritesCell.m */; };
 		0FB2B5FE1B93249B005B053C /* JobData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB2B5FD1B93249B005B053C /* JobData.m */; };
 		0FB2B6011B934FF8005B053C /* JobsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB2B6001B934FF8005B053C /* JobsViewController.m */; };
 		0FFEBFEE1B8B0E21006F8DA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FFEBFED1B8B0E21006F8DA6 /* main.m */; };
@@ -47,6 +50,8 @@
 		0F1FDDD71B95930A001629C1 /* ExpandingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandingCell.xib; sourceTree = "<group>"; };
 		0F1FDDD91B9594A5001629C1 /* ExpandingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpandingTableViewCell.h; sourceTree = "<group>"; };
 		0F1FDDDA1B9594A5001629C1 /* ExpandingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpandingTableViewCell.m; sourceTree = "<group>"; };
+		0F1FDDDC1B95C7A2001629C1 /* JobUrlWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobUrlWebViewController.h; sourceTree = "<group>"; };
+		0F1FDDDD1B95C7A2001629C1 /* JobUrlWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobUrlWebViewController.m; sourceTree = "<group>"; };
 		0F3638AE1B8C4DAE00CD1A86 /* mCV.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mCV.plist; sourceTree = "<group>"; };
 		0F3638B81B8C70D100CD1A86 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		0F3638BF1B8C78E700CD1A86 /* mCV.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mCV.pch; sourceTree = "<group>"; };
@@ -73,6 +78,10 @@
 		0F7652041B94A9D0001C838F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		0F7652071B94AA3B001C838F /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		0F7652081B94AA3B001C838F /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		0FA0F3D51B95EFAC003010D2 /* FavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesViewController.h; sourceTree = "<group>"; };
+		0FA0F3D61B95EFAC003010D2 /* FavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesViewController.m; sourceTree = "<group>"; };
+		0FA0F3DB1B95F0E2003010D2 /* FavoritesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesCell.h; sourceTree = "<group>"; };
+		0FA0F3DC1B95F0E2003010D2 /* FavoritesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesCell.m; sourceTree = "<group>"; };
 		0FB2B5FC1B93249B005B053C /* JobData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobData.h; sourceTree = "<group>"; };
 		0FB2B5FD1B93249B005B053C /* JobData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobData.m; sourceTree = "<group>"; };
 		0FB2B5FF1B934FF8005B053C /* JobsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsViewController.h; sourceTree = "<group>"; };
@@ -170,6 +179,7 @@
 				0F582B801B9057A300077597 /* TabBarMain.m */,
 				0F582B821B90607C00077597 /* JobsTable */,
 				0F7652061B94AA0C001C838F /* Maps */,
+				0FA0F3D41B95EE6B003010D2 /* Favorites */,
 			);
 			path = PrivateUser;
 			sourceTree = "<group>";
@@ -183,6 +193,8 @@
 				0FB2B6001B934FF8005B053C /* JobsViewController.m */,
 				0F7652011B9484C3001C838F /* JobDetailTableViewController.h */,
 				0F7652021B9484C3001C838F /* JobDetailTableViewController.m */,
+				0F1FDDDC1B95C7A2001629C1 /* JobUrlWebViewController.h */,
+				0F1FDDDD1B95C7A2001629C1 /* JobUrlWebViewController.m */,
 				0F1FDDD61B9592D8001629C1 /* Expanding cell */,
 				0FB2B5FB1B93245D005B053C /* Model */,
 			);
@@ -196,6 +208,17 @@
 				0F7652081B94AA3B001C838F /* MapViewController.m */,
 			);
 			path = Maps;
+			sourceTree = "<group>";
+		};
+		0FA0F3D41B95EE6B003010D2 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				0FA0F3D51B95EFAC003010D2 /* FavoritesViewController.h */,
+				0FA0F3D61B95EFAC003010D2 /* FavoritesViewController.m */,
+				0FA0F3DB1B95F0E2003010D2 /* FavoritesCell.h */,
+				0FA0F3DC1B95F0E2003010D2 /* FavoritesCell.m */,
+			);
+			path = Favorites;
 			sourceTree = "<group>";
 		};
 		0FB2B5FB1B93245D005B053C /* Model */ = {
@@ -433,6 +456,7 @@
 			files = (
 				0F49A8361B91A62F00A62D2D /* User.m in Sources */,
 				0F582B7B1B90570D00077597 /* UserProfile.m in Sources */,
+				0F1FDDDE1B95C7A2001629C1 /* JobUrlWebViewController.m in Sources */,
 				0FFEBFF11B8B0E21006F8DA6 /* AppDelegate.m in Sources */,
 				0F582B811B9057A300077597 /* TabBarMain.m in Sources */,
 				0F1FDDDB1B9594A5001629C1 /* ExpandingTableViewCell.m in Sources */,
@@ -443,7 +467,9 @@
 				0FB2B6011B934FF8005B053C /* JobsViewController.m in Sources */,
 				0FB2B5FE1B93249B005B053C /* JobData.m in Sources */,
 				0F582B7E1B90575C00077597 /* puLoginRegister.m in Sources */,
+				0FA0F3DD1B95F0E2003010D2 /* FavoritesCell.m in Sources */,
 				0F582B781B9056C200077597 /* Helper.m in Sources */,
+				0FA0F3D71B95EFAC003010D2 /* FavoritesViewController.m in Sources */,
 				0F7652091B94AA3B001C838F /* MapViewController.m in Sources */,
 				0F582B721B90561600077597 /* PickUser.m in Sources */,
 				0F49A8391B91A6A800A62D2D /* Configuration.m in Sources */,
@@ -518,7 +544,7 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
@@ -555,7 +581,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;

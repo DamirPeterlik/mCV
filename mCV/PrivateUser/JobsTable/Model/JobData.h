@@ -16,5 +16,6 @@
 @property (nonatomic,strong) NSString *jobTitle;
 @property (nonatomic,strong) NSString *latitude;
 @property (nonatomic,strong) NSString *longitude;
+@property (nonatomic,strong) NSString *jobUrl;
 
 @end

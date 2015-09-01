@@ -9,6 +9,7 @@
 #import "JobDetailTableViewController.h"
 #import "APILayer.h"
 #import "JobData.h"
+#import "JobUrlWebViewController.h"
 
 @interface JobDetailTableViewController ()
 
@@ -28,9 +29,15 @@
     self.jobTitleLbl.text =  [NSString stringWithFormat:@"%@", self.jobModel.jobTitle];
     self.jobDetailLbl.text =  [NSString stringWithFormat:@"%@", self.jobModel.jobDetail];
     self.jobLocation.text =  [NSString stringWithFormat:@"%@", self.jobModel.jobLocation];
+    
 
     
-    NSLog(@"job model - %@", self.jobModel.jobTitle);
+    NSLog(@"job url - %@", self.jobModel.jobUrl);
+    
+    self.jobUrlString = [NSString stringWithFormat:@"%@", self.jobModel.jobUrl];
+    
+    NSLog(@"job url string - %@", self.jobUrlString);
+
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -44,6 +51,21 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(IBAction)openJobUrl:(id)sender
+{
+    JobUrlWebViewController *webView = [self.storyboard instantiateViewControllerWithIdentifier:@"jobUrlWebView"];
+    
+    NSString *passedMessage = [NSString stringWithFormat:@"%@", self.jobModel.jobUrl];
+    NSLog(@"job url passed - %@", passedMessage);
+    webView.passedUrl = passedMessage;
+    //[webView setDelegate:self];
+    
+    [self.navigationController pushViewController:webView animated:YES];
+
+    
+  //  [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@", self.jobModel.jobUrl]]];
+    
+}
 
 
 @end

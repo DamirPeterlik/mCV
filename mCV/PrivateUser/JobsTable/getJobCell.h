@@ -14,3 +14,5 @@
 @property (strong, nonatomic) IBOutlet UILabel *jobDescription;
 
 @end
+
+//ovu klasu ne koristimo vise jer smo napravili novu s nib fajlom za expandible view
