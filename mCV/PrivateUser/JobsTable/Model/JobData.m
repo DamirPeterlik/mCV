@@ -33,27 +33,28 @@
                                                        @"longitude": @""}];
 }
 
+ */
 
 -(void) setValue:(id)value forUndefinedKey:(NSString *)key
 {
-    //DLog(@"Undefined Key: %@", key);
-    if([key isEqualToString:@"result"])
+    // DLog(@"Defined Key: %@", key);
+    
+    if([key isEqualToString:@"jobGroup"])
     {
-        self.jobTitle = value;
-        
-    } else if( [key isEqualToString:@"jobDetail"]){
-        
-        self.jobDetail  = value;
-        
+        self.jobGroup = value;
+    
+    }else if ([key isEqualToString:@"jobTitle"])
+    {
+    self.jobTitle = value;
     }
-    else if( [key isEqualToString:@"jobLocation"]){
-        
-        self.jobLocation  = value;
-        
+    else if ([key isEqualToString:@"jobDetail"])
+    {
+        self.jobDetail = value;
     }
     else
         [super setValue:value forKey:key];
+    
+    //NSLog(@"sdfjiriri %@", self.jobGroup);
 }
 
- */
 @end

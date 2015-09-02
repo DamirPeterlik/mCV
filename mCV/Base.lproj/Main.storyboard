@@ -381,14 +381,29 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="y8M-QG-hZX"/>
+                    <navigationItem key="navigationItem" id="y8M-QG-hZX">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="5do-Pw-rI5">
+                            <connections>
+                                <segue destination="ggl-RF-fZk" kind="show" id="ynk-FI-Gp8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="navItem" destination="y8M-QG-hZX" id="mgh-ww-ofM"/>
+                        <outlet property="searchDisplayController" destination="JMk-eW-qUi" id="k12-Gz-z9D"/>
                         <outlet property="tableView" destination="u08-kj-HjE" id="g5u-x1-8MM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wJB-0j-oQj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="JMk-eW-qUi">
+                    <connections>
+                        <outlet property="delegate" destination="EeR-F6-SKu" id="JH0-57-cqZ"/>
+                        <outlet property="searchContentsController" destination="EeR-F6-SKu" id="XOc-0x-abl"/>
+                        <outlet property="searchResultsDataSource" destination="EeR-F6-SKu" id="dBt-Oc-tka"/>
+                        <outlet property="searchResultsDelegate" destination="EeR-F6-SKu" id="k0l-Hf-Ie3"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="5115.5" y="575.5"/>
         </scene>
@@ -430,6 +445,64 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mwh-bC-wJf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5115.5" y="1433.5"/>
+        </scene>
+        <!--Filter Table View Controller-->
+        <scene sceneID="sxJ-VY-dP5">
+            <objects>
+                <tableViewController id="ggl-RF-fZk" customClass="FilterTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="qYT-ja-9aH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="jKW-Jv-MRD">
+                            <rect key="frame" x="0.0" y="104" width="375" height="58"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ro3-Bu-m19">
+                                    <rect key="frame" x="164" y="14" width="46" height="30"/>
+                                    <state key="normal" title="Button">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="confirmButton:" destination="ggl-RF-fZk" eventType="touchUpInside" id="cdz-KY-khm"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <sections>
+                            <tableViewSection headerTitle="Source Account" id="eaK-Lc-8AR">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="54" id="5fT-lR-efG">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5fT-lR-efG" id="aKh-c6-57I">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qbw-Oj-E5m">
+                                                    <rect key="frame" x="8" y="16" width="359" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="ggl-RF-fZk" id="gOc-zX-iQa"/>
+                            <outlet property="delegate" destination="ggl-RF-fZk" id="7Kl-7t-PVy"/>
+                        </connections>
+                    </tableView>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="accNumberLabel" destination="Qbw-Oj-E5m" id="aA3-X7-MQI"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VIC-hV-vcd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5603.5" y="-218.5"/>
         </scene>
         <!--Job Detail Table View Controller-->
         <scene sceneID="53p-rA-FvK">

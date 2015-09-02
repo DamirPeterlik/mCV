@@ -25,6 +25,10 @@
 		0F7652091B94AA3B001C838F /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F7652081B94AA3B001C838F /* MapViewController.m */; };
 		0FA0F3D71B95EFAC003010D2 /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA0F3D61B95EFAC003010D2 /* FavoritesViewController.m */; };
 		0FA0F3DD1B95F0E2003010D2 /* FavoritesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA0F3DC1B95F0E2003010D2 /* FavoritesCell.m */; };
+		0FA0F3E21B9612AA003010D2 /* TableListPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA0F3E01B9612AA003010D2 /* TableListPickerController.m */; };
+		0FA0F3E31B9612AA003010D2 /* TableListPickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FA0F3E11B9612AA003010D2 /* TableListPickerController.xib */; };
+		0FA0F3E81B9615A8003010D2 /* FilterData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA0F3E51B9615A8003010D2 /* FilterData.m */; };
+		0FA0F3E91B9615A8003010D2 /* FilterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA0F3E71B9615A8003010D2 /* FilterTableViewController.m */; };
 		0FB2B5FE1B93249B005B053C /* JobData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB2B5FD1B93249B005B053C /* JobData.m */; };
 		0FB2B6011B934FF8005B053C /* JobsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB2B6001B934FF8005B053C /* JobsViewController.m */; };
 		0FFEBFEE1B8B0E21006F8DA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FFEBFED1B8B0E21006F8DA6 /* main.m */; };
@@ -82,6 +86,13 @@
 		0FA0F3D61B95EFAC003010D2 /* FavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesViewController.m; sourceTree = "<group>"; };
 		0FA0F3DB1B95F0E2003010D2 /* FavoritesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesCell.h; sourceTree = "<group>"; };
 		0FA0F3DC1B95F0E2003010D2 /* FavoritesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesCell.m; sourceTree = "<group>"; };
+		0FA0F3DF1B9612AA003010D2 /* TableListPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableListPickerController.h; sourceTree = "<group>"; };
+		0FA0F3E01B9612AA003010D2 /* TableListPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableListPickerController.m; sourceTree = "<group>"; };
+		0FA0F3E11B9612AA003010D2 /* TableListPickerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableListPickerController.xib; sourceTree = "<group>"; };
+		0FA0F3E41B9615A8003010D2 /* FilterData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FilterData.h; path = mCV/PrivateUser/FilterData.h; sourceTree = SOURCE_ROOT; };
+		0FA0F3E51B9615A8003010D2 /* FilterData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FilterData.m; path = mCV/PrivateUser/FilterData.m; sourceTree = SOURCE_ROOT; };
+		0FA0F3E61B9615A8003010D2 /* FilterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FilterTableViewController.h; path = mCV/PrivateUser/FilterTableViewController.h; sourceTree = SOURCE_ROOT; };
+		0FA0F3E71B9615A8003010D2 /* FilterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FilterTableViewController.m; path = mCV/PrivateUser/FilterTableViewController.m; sourceTree = SOURCE_ROOT; };
 		0FB2B5FC1B93249B005B053C /* JobData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobData.h; sourceTree = "<group>"; };
 		0FB2B5FD1B93249B005B053C /* JobData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobData.m; sourceTree = "<group>"; };
 		0FB2B5FF1B934FF8005B053C /* JobsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsViewController.h; sourceTree = "<group>"; };
@@ -187,6 +198,7 @@
 		0F582B821B90607C00077597 /* JobsTable */ = {
 			isa = PBXGroup;
 			children = (
+				0FA0F3DE1B961279003010D2 /* filter */,
 				0F49A83A1B91CEDA00A62D2D /* getJobCell.h */,
 				0F49A83B1B91CEDA00A62D2D /* getJobCell.m */,
 				0FB2B5FF1B934FF8005B053C /* JobsViewController.h */,
@@ -219,6 +231,20 @@
 				0FA0F3DC1B95F0E2003010D2 /* FavoritesCell.m */,
 			);
 			path = Favorites;
+			sourceTree = "<group>";
+		};
+		0FA0F3DE1B961279003010D2 /* filter */ = {
+			isa = PBXGroup;
+			children = (
+				0FA0F3E41B9615A8003010D2 /* FilterData.h */,
+				0FA0F3E51B9615A8003010D2 /* FilterData.m */,
+				0FA0F3E61B9615A8003010D2 /* FilterTableViewController.h */,
+				0FA0F3E71B9615A8003010D2 /* FilterTableViewController.m */,
+				0FA0F3DF1B9612AA003010D2 /* TableListPickerController.h */,
+				0FA0F3E01B9612AA003010D2 /* TableListPickerController.m */,
+				0FA0F3E11B9612AA003010D2 /* TableListPickerController.xib */,
+			);
+			name = filter;
 			sourceTree = "<group>";
 		};
 		0FB2B5FB1B93245D005B053C /* Model */ = {
@@ -401,6 +427,7 @@
 			files = (
 				0FFEBFF71B8B0E21006F8DA6 /* Main.storyboard in Resources */,
 				0F3638AF1B8C4DAE00CD1A86 /* mCV.plist in Resources */,
+				0FA0F3E31B9612AA003010D2 /* TableListPickerController.xib in Resources */,
 				0F1FDDD81B95930A001629C1 /* ExpandingCell.xib in Resources */,
 				0FFEBFFC1B8B0E21006F8DA6 /* LaunchScreen.xib in Resources */,
 				0FFEBFF91B8B0E21006F8DA6 /* Images.xcassets in Resources */,
@@ -458,11 +485,14 @@
 				0F582B7B1B90570D00077597 /* UserProfile.m in Sources */,
 				0F1FDDDE1B95C7A2001629C1 /* JobUrlWebViewController.m in Sources */,
 				0FFEBFF11B8B0E21006F8DA6 /* AppDelegate.m in Sources */,
+				0FA0F3E21B9612AA003010D2 /* TableListPickerController.m in Sources */,
 				0F582B811B9057A300077597 /* TabBarMain.m in Sources */,
 				0F1FDDDB1B9594A5001629C1 /* ExpandingTableViewCell.m in Sources */,
 				0FFEBFEE1B8B0E21006F8DA6 /* main.m in Sources */,
+				0FA0F3E81B9615A8003010D2 /* FilterData.m in Sources */,
 				0F49A83C1B91CEDA00A62D2D /* getJobCell.m in Sources */,
 				0F7652031B9484C3001C838F /* JobDetailTableViewController.m in Sources */,
+				0FA0F3E91B9615A8003010D2 /* FilterTableViewController.m in Sources */,
 				0F582B751B90566200077597 /* APILayer.m in Sources */,
 				0FB2B6011B934FF8005B053C /* JobsViewController.m in Sources */,
 				0FB2B5FE1B93249B005B053C /* JobData.m in Sources */,
