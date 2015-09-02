@@ -173,6 +173,8 @@
     
     //FilterData *number;
     
+    NSLog(@"ccc - %@", data.jobGroup);
+    
     if(data.jobGroup)
     {
        // NSPredicate *p = [NSPredicate predicateWithFormat:@"SELF.jobGroup CONTAINS[cd] %@", grupa.jobGroup];
@@ -186,7 +188,7 @@
     NSPredicate *allPredicate = [NSCompoundPredicate andPredicateWithSubpredicates:compoundPredicate];
     
     
-    self.filteredArray = [self.responseJobGroup filteredArrayUsingPredicate:allPredicate];
+    self.filteredArray = [self.datasource filteredArrayUsingPredicate:allPredicate];
     [self.tableView reloadData];
 
 }
@@ -355,6 +357,16 @@
     NSLog(@"fil array 8- %@", self.filteredArray);
     isFiltering = YES;
 
+}
+
+#pragma mark - Actions
+
+-(IBAction)filterButtonPressed:(id)sender
+{
+    //storyboardID = FilterTableViewController
+    FilterTableViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"FilterTableViewController"];
+    vc.delegate = self;
+    [self.navigationController presentViewController:vc animated:YES completion:nil];
 }
 
 

@@ -65,7 +65,7 @@
     
     FilterData *job;
     
-    [self.delegate returnFilteredData:job];
+    //[self.delegate returnFilteredData:job]; hm?
 
     if(indexPath.section == 0){
         if(indexPath.row == 0){
@@ -158,12 +158,13 @@
     NSLog(@"acc num confirm button %@", fData.jobGroup);
     
     
-    [self.delegate returnFilteredData:fData];
+    [self.delegate returnFilteredData:fData]; /// trebas vratiti samo string po kojem zelis filtrirat
     NSLog(@"delegate - %@", self.delegate);
     
    // [self.delegate returnFilteredData:nil];
 
-    [self.navigationController popViewControllerAnimated:YES];
+   // [self.navigationController popViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
     
     NSLog(@"confirm kliked");
 

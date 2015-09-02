@@ -384,7 +384,7 @@
                     <navigationItem key="navigationItem" id="y8M-QG-hZX">
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="5do-Pw-rI5">
                             <connections>
-                                <segue destination="ggl-RF-fZk" kind="show" id="ynk-FI-Gp8"/>
+                                <action selector="filterButtonPressed:" destination="EeR-F6-SKu" id="JXD-xr-dZu"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -393,6 +393,7 @@
                         <outlet property="navItem" destination="y8M-QG-hZX" id="mgh-ww-ofM"/>
                         <outlet property="searchDisplayController" destination="JMk-eW-qUi" id="k12-Gz-z9D"/>
                         <outlet property="tableView" destination="u08-kj-HjE" id="g5u-x1-8MM"/>
+                        <segue destination="ggl-RF-fZk" kind="presentation" identifier="yolo" id="i6p-9Z-jg8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wJB-0j-oQj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -449,7 +450,7 @@
         <!--Filter Table View Controller-->
         <scene sceneID="sxJ-VY-dP5">
             <objects>
-                <tableViewController id="ggl-RF-fZk" customClass="FilterTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="FilterTableViewController" id="ggl-RF-fZk" customClass="FilterTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="qYT-ja-9aH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
