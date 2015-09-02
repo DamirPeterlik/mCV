@@ -12,7 +12,7 @@
 #import "JobDetailTableViewController.h"
 #import "FilterTableViewController.h"
 
-@interface JobsViewController : UIViewController <UITableViewDataSource,UITableViewDelegate,FilterDataDelegate,UISearchBarDelegate,UISearchDisplayDelegate>
+@interface JobsViewController : UIViewController <UITableViewDataSource,UITableViewDelegate,FilterDataDelegate, UISearchBarDelegate,UISearchDisplayDelegate>
 
 
 @property (strong, nonatomic) IBOutlet UINavigationItem *navItem;

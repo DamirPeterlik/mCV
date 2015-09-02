@@ -382,6 +382,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="y8M-QG-hZX">
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="voQ-rL-YwP">
+                            <connections>
+                                <action selector="cancelFilteredAction:" destination="EeR-F6-SKu" id="zWR-Z8-xwj"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="5do-Pw-rI5">
                             <connections>
                                 <action selector="filterButtonPressed:" destination="EeR-F6-SKu" id="JXD-xr-dZu"/>
@@ -460,19 +465,26 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ro3-Bu-m19">
-                                    <rect key="frame" x="164" y="14" width="46" height="30"/>
-                                    <state key="normal" title="Button">
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
+                                    <rect key="frame" x="201" y="14" width="82" height="30"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                    <state key="normal" title="Pretrazi"/>
                                     <connections>
                                         <action selector="confirmButton:" destination="ggl-RF-fZk" eventType="touchUpInside" id="cdz-KY-khm"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x0v-j8-nNB">
+                                    <rect key="frame" x="92" y="14" width="72" height="30"/>
+                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                    <state key="normal" title="Zatvori"/>
+                                    <connections>
+                                        <action selector="cancelButton:" destination="ggl-RF-fZk" eventType="touchUpInside" id="m1t-Ck-j4J"/>
                                     </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                         <sections>
-                            <tableViewSection headerTitle="Source Account" id="eaK-Lc-8AR">
+                            <tableViewSection headerTitle="Grupa posla" id="eaK-Lc-8AR">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="54" id="5fT-lR-efG">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -480,6 +492,24 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qbw-Oj-E5m">
+                                                    <rect key="frame" x="8" y="16" width="359" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Lokacija posla" id="0P6-0L-v5N">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="54" id="wK6-mn-r8x">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wK6-mn-r8x" id="UsR-g7-eDg">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dte-8n-g9M">
                                                     <rect key="frame" x="8" y="16" width="359" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -498,6 +528,7 @@
                     </tableView>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="accLocationLabel" destination="dte-8n-g9M" id="WbQ-X7-4kt"/>
                         <outlet property="accNumberLabel" destination="Qbw-Oj-E5m" id="aA3-X7-MQI"/>
                     </connections>
                 </tableViewController>

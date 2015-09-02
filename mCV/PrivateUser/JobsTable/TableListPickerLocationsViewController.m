@@ -1,24 +1,24 @@
 //
-//  TableListPickerController.m
+//  TableListPickerLocationsViewController.m
 //  mCV
 //
-//  Created by Damir Peterlik on 01/09/15.
+//  Created by Damir Peterlik on 02/09/15.
 //  Copyright (c) 2015 Damir Peterlik. All rights reserved.
 //
 
-#import "TableListPickerController.h"
+#import "TableListPickerLocationsViewController.h"
 
-@interface TableListPickerController ()
+@interface TableListPickerLocationsViewController ()
 
 @property (nonatomic,strong) IBOutlet UITableView *tableView;
 
-
 @end
 
-@implementation TableListPickerController
+@implementation TableListPickerLocationsViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad]; 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
 }
 
 -(void)dissmisView
@@ -43,6 +43,7 @@
         [self removeFromParentViewController];
     }];
 }
+
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -69,8 +70,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    
-    
     static NSString *simpleTableIdentifier = @"SimpleTableItem";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
@@ -81,19 +80,19 @@
     
     cell.textLabel.text = [self.dataSource objectAtIndex:indexPath.row];
     
-    
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *jobGroup = [self.dataSource objectAtIndex:indexPath.row];
-
+    NSString *jobLocation = [self.dataSource objectAtIndex:indexPath.row];
+    
     [self dissmisView];
     
-    [self.delegate getPickedAccountNumber:jobGroup];
-
+    [self.delegate getPickedLocation:jobLocation];
+    
 }
 
 
 @end
+

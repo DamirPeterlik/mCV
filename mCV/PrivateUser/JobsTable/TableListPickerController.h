@@ -21,4 +21,6 @@
 @property (nonatomic,strong) NSArray *dataSource;
 @property (strong,nonatomic) id<TableListPickerDelegate> delegate;
 
+-(IBAction)exitBtn:(id)sender;
+
 @end

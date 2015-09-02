@@ -47,9 +47,9 @@
     {
     self.jobTitle = value;
     }
-    else if ([key isEqualToString:@"jobDetail"])
+    else if ([key isEqualToString:@"jobLocation"])
     {
-        self.jobDetail = value;
+        self.jobLocation = value;
     }
     else
         [super setValue:value forKey:key];

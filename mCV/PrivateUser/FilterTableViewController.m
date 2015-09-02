@@ -8,6 +8,7 @@
 
 #import "FilterTableViewController.h"
 #import "TableListPickerController.h"
+#import "TableListPickerLocationsViewController.h"
 
 @interface FilterTableViewController ()
 {
@@ -15,8 +16,12 @@
 }
 
 @property (strong, nonatomic) IBOutlet UILabel *accNumberLabel;
+@property (strong, nonatomic) IBOutlet UILabel *accLocationLabel;
 
 - (IBAction)confirmButton:(id)sender;
+
+- (IBAction)cancelButton:(id)sender;
+
 
 @end
 
@@ -45,25 +50,24 @@
     gestureRecognizer.cancelsTouchesInView = NO;
     [self.tableView addGestureRecognizer:gestureRecognizer];
     
-    self.accFilterNumbers = [NSArray arrayWithObjects:@"IT, telekomunikacije", @"Mehanika", @"Varazdin", @"Kuhar", @"Doktor", nil];
+    self.accFilterGroups = [NSArray arrayWithObjects:@"IT, telekomunikacije", @"Mehanika", @"Umjetnost", @"Vozac", @"Zdravstvo", @"Ugostiteljstvo", @"Skolstvo", @"Turizam", nil];
     
+    self.accFilterLocations = [NSArray arrayWithObjects:@"Varazdin", @"Zagreb", @"Rijeka", @"Zadar", @"Dragalic", nil];
 }
 - (void) hideKeyboard {
     
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"filtrira se bb");
     
-    FilterData *job;
+    //FilterData *job;
     
     //[self.delegate returnFilteredData:job]; hm?
 
@@ -73,7 +77,7 @@
 
             TableListPickerController *tlpVc = [TableListPickerController new];//nib is the same name so i can use New
             tlpVc.delegate = self;
-            tlpVc.dataSource = self.accFilterNumbers;
+            tlpVc.dataSource = self.accFilterGroups;
             [tlpVc.view setAlpha:0];
             [tlpVc.view setFrame:self.view.bounds];
             
@@ -84,7 +88,24 @@
                 [self.view layoutIfNeeded];
             } completion:nil];
             NSLog(@"filtrira se gg");
-
+        }
+    }
+    
+    if(indexPath.section == 1){
+        if(indexPath.row == 0){
+            
+            TableListPickerLocationsViewController *tlpVc = [TableListPickerLocationsViewController new];//nib is the same name so i can use New
+            tlpVc.delegate = self;
+            tlpVc.dataSource = self.accFilterLocations;
+            [tlpVc.view setAlpha:0];
+            [tlpVc.view setFrame:self.view.bounds];
+            
+            [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveEaseIn | UIViewAnimationOptionTransitionCurlDown animations:^{
+                [self.view addSubview:tlpVc.view];
+                [self addChildViewController:tlpVc];
+                [tlpVc.view setAlpha:1];
+                [self.view layoutIfNeeded];
+            } completion:nil];
         }
     }
     
@@ -95,12 +116,13 @@
 {
     self.accNumberLabel.text = jobGroup;
     [self.tableView reloadData];
-    
-    NSLog(@"%@", self.accNumberLabel.text);
-    NSLog(@"filter data ac number string - %@", jobGroup);
-
 }
 
+-(void)getPickedLocation:(NSString *)accLocation
+{
+    self.accLocationLabel.text = accLocation;
+    [self.tableView reloadData];
+}
 
 - (void)keyboardWillHide:(NSNotification *)n
 {
@@ -157,17 +179,26 @@
     [fData setJobGroup:[self.accNumberLabel.text isEqualToString:@"..." ] ? nil : self.accNumberLabel.text ];
     NSLog(@"acc num confirm button %@", fData.jobGroup);
     
+    [fData setJobLocation:[self.accLocationLabel.text isEqualToString:@"..." ] ? nil : self.accLocationLabel.text ];
+    NSLog(@"acc num confirm button %@", fData.jobLocation);
     
     [self.delegate returnFilteredData:fData]; /// trebas vratiti samo string po kojem zelis filtrirat
     NSLog(@"delegate - %@", self.delegate);
-    
-   // [self.delegate returnFilteredData:nil];
 
-   // [self.navigationController popViewControllerAnimated:YES];
     [self dismissViewControllerAnimated:YES completion:nil];
     
     NSLog(@"confirm kliked");
 
 }
+
+- (IBAction)cancelButton:(id)sender
+{
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    NSLog(@"cancel kliked");
+    
+}
+
 
 @end

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "TableListPickerController.h"
+#import "TableListPickerLocationsViewController.h"
 #import "FilterData.h"
 
 @class FilterTableViewController;
@@ -18,9 +19,11 @@
 
 @end
 
-@interface FilterTableViewController : UITableViewController <TableListPickerDelegate,UITextFieldDelegate>
+@interface FilterTableViewController : UITableViewController <TableListPickerDelegate, TableListPickerLocationsViewControllerDelegate, UITextFieldDelegate>
 
-@property (nonatomic,strong) NSArray *accFilterNumbers;
+@property (nonatomic,strong) NSArray *accFilterGroups;
+@property (nonatomic,strong) NSArray *accFilterLocations;
+
 
 @property (nonatomic,strong) id <FilterDataDelegate> delegate;
 

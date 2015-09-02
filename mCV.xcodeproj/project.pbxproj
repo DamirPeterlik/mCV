@@ -10,6 +10,8 @@
 		0F1FDDD81B95930A001629C1 /* ExpandingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F1FDDD71B95930A001629C1 /* ExpandingCell.xib */; };
 		0F1FDDDB1B9594A5001629C1 /* ExpandingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1FDDDA1B9594A5001629C1 /* ExpandingTableViewCell.m */; };
 		0F1FDDDE1B95C7A2001629C1 /* JobUrlWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1FDDDD1B95C7A2001629C1 /* JobUrlWebViewController.m */; };
+		0F2490851B972B69003132A3 /* TableListPickerLocationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2490831B972B69003132A3 /* TableListPickerLocationsViewController.m */; };
+		0F2490861B972B69003132A3 /* TableListPickerLocationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F2490841B972B69003132A3 /* TableListPickerLocationsViewController.xib */; };
 		0F3638AF1B8C4DAE00CD1A86 /* mCV.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F3638AE1B8C4DAE00CD1A86 /* mCV.plist */; };
 		0F49A8361B91A62F00A62D2D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F49A8351B91A62F00A62D2D /* User.m */; };
 		0F49A8391B91A6A800A62D2D /* Configuration.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F49A8381B91A6A800A62D2D /* Configuration.m */; };
@@ -56,6 +58,9 @@
 		0F1FDDDA1B9594A5001629C1 /* ExpandingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpandingTableViewCell.m; sourceTree = "<group>"; };
 		0F1FDDDC1B95C7A2001629C1 /* JobUrlWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobUrlWebViewController.h; sourceTree = "<group>"; };
 		0F1FDDDD1B95C7A2001629C1 /* JobUrlWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobUrlWebViewController.m; sourceTree = "<group>"; };
+		0F2490821B972B69003132A3 /* TableListPickerLocationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableListPickerLocationsViewController.h; sourceTree = "<group>"; };
+		0F2490831B972B69003132A3 /* TableListPickerLocationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableListPickerLocationsViewController.m; sourceTree = "<group>"; };
+		0F2490841B972B69003132A3 /* TableListPickerLocationsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableListPickerLocationsViewController.xib; sourceTree = "<group>"; };
 		0F3638AE1B8C4DAE00CD1A86 /* mCV.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mCV.plist; sourceTree = "<group>"; };
 		0F3638B81B8C70D100CD1A86 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		0F3638BF1B8C78E700CD1A86 /* mCV.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mCV.pch; sourceTree = "<group>"; };
@@ -243,6 +248,9 @@
 				0FA0F3DF1B9612AA003010D2 /* TableListPickerController.h */,
 				0FA0F3E01B9612AA003010D2 /* TableListPickerController.m */,
 				0FA0F3E11B9612AA003010D2 /* TableListPickerController.xib */,
+				0F2490821B972B69003132A3 /* TableListPickerLocationsViewController.h */,
+				0F2490831B972B69003132A3 /* TableListPickerLocationsViewController.m */,
+				0F2490841B972B69003132A3 /* TableListPickerLocationsViewController.xib */,
 			);
 			name = filter;
 			sourceTree = "<group>";
@@ -426,6 +434,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FFEBFF71B8B0E21006F8DA6 /* Main.storyboard in Resources */,
+				0F2490861B972B69003132A3 /* TableListPickerLocationsViewController.xib in Resources */,
 				0F3638AF1B8C4DAE00CD1A86 /* mCV.plist in Resources */,
 				0FA0F3E31B9612AA003010D2 /* TableListPickerController.xib in Resources */,
 				0F1FDDD81B95930A001629C1 /* ExpandingCell.xib in Resources */,
@@ -500,6 +509,7 @@
 				0FA0F3DD1B95F0E2003010D2 /* FavoritesCell.m in Sources */,
 				0F582B781B9056C200077597 /* Helper.m in Sources */,
 				0FA0F3D71B95EFAC003010D2 /* FavoritesViewController.m in Sources */,
+				0F2490851B972B69003132A3 /* TableListPickerLocationsViewController.m in Sources */,
 				0F7652091B94AA3B001C838F /* MapViewController.m in Sources */,
 				0F582B721B90561600077597 /* PickUser.m in Sources */,
 				0F49A8391B91A6A800A62D2D /* Configuration.m in Sources */,

@@ -24,8 +24,10 @@
 
 @property (strong,nonatomic) NSArray *filteredArray;
 @property (strong,nonatomic) NSArray *accNumbers;
-@property (nonatomic,strong) NSMutableArray *datasource2;
-@property (nonatomic, strong) NSArray *responseJobGroup;
+@property (strong,nonatomic) NSArray *accLocations;
+
+//@property (nonatomic,strong) NSMutableArray *datasource2;
+//@property (nonatomic, strong) NSArray *responseJobGroup;
 
 @end
 
@@ -34,37 +36,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
-    
+    self.navItem.title = @"Job/Posao";
     selectedIndex = -1;
-
+    
     self.navigationItem.backBarButtonItem = nil;
     self.navigationItem.hidesBackButton = YES;
-
-    self.navItem.title = @"Job/Posao";
-    
     self.refreshControl = [[UIRefreshControl alloc]init];
     [self.tableView addSubview:self.refreshControl];
     [self.refreshControl addTarget:self action:@selector(refreshContent) forControlEvents:UIControlEventValueChanged];
     [self refreshContent];
-    // Do any additional setup after loading the view.
-    
     [self getJobs];
-    
-    //proba favorites
-    
-    //isFiltering = NO;
-   // isFiltering = YES;
-
     self.navigationItem.leftBarButtonItem.enabled = NO;
-
     [self.tableView reloadData];
-    
-
-
 }
-
 
 -(void)refreshContent
 {
@@ -77,72 +61,39 @@
 {
     [super viewWillAppear:animated];
     [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
-    NSLog(@"response job grupa apear - %@", self.responseJobGroup);
-
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     self.tabBarController.navigationItem.title =@"Jobs/Poslovi";
-    NSLog(@"response job grupa did apear - %@", self.responseJobGroup);
-
 }
-/*
-- (void) viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-}
- */
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 - (void) getJobs
 {
     [APILayer getJobsWithjobUrl:nil
-                     withSucces:^(AFHTTPRequestOperation *operation, id responseObject) {
-                         /////proba
+                     withSucces:^(AFHTTPRequestOperation *operation, id responseObject)
+                    {
                          NSArray *responsPosts = [responseObject objectForKey:@"result"];
-                         //NSArray *responsPosts2 = [[responseObject objectForKey:@"result"] valueForKey:@"jobTitle"];
-                         //NSArray *responsPosts = [[responseObject objectForKey:@"result"] valueForKey:@"jobGroup"];
-
                          NSError *error = nil;
-                         
                          self.datasource = [JobData arrayOfModelsFromDictionaries:responsPosts error:&error];
                          
-    NSArray *responsPosts2 = [[responseObject objectForKey:@"result"] valueForKey:@"jobGroup"];
-                         
-                        self.datasource2 = [JobData arrayOfModelsFromDictionaries:responsPosts2 error:&error];
-                         
-                         //NSLog(@"\n\n\n");
-                         //NSLog(@"datasource 2 response 2 - %@", self.datasource2);
-                         //NSLog(@"datasource 2 value 2 - %@", [self.datasource2 valueForKey:@"jobGroup"]);
-
-                         self.responseJobGroup = [NSArray arrayWithArray:responsPosts2];
-                         
-                         //NSLog(@"\n\n\n");
-                         NSLog(@"response 2 - %@", responsPosts2);
-                         NSLog(@"\n\n\n");
-                         NSLog(@"response job group properti - %@", self.responseJobGroup);
+                        // NSArray *responsPosts2 = [[responseObject objectForKey:@"result"] valueForKey:@"jobGroup"];
+                        // self.datasource2 = [JobData arrayOfModelsFromDictionaries:responsPosts2 error:&error];
+                        // self.responseJobGroup = [NSArray arrayWithArray:responsPosts2];
+                        // NSLog(@"response 2 - %@", responsPosts2);
 
                          [self.tableView reloadData];
                          [self.refreshControl setEnabled:YES];
                          [self.refreshControl endRefreshing];
                          
-                     } andFailure:^(NSError *error) {
+                     } andFailure:^(NSError *error)
+                     {
                          NSLog(@"error: %@", error);
                          [self.refreshControl setEnabled:NO];
 
@@ -154,43 +105,45 @@
 -(void)responseTrnasactionsRecivedWithArray:(NSMutableArray *)array
 {
     self.datasource = array;
-    NSLog(@"fil datasource- %@", self.datasource);
-
     [self.tableView reloadData];
     [self getAllAcountNumbers];
-
+    [self getAllAcountLocations];
 }
 
 -(void)returnFilteredData:(FilterData *)data
 {
     self.navigationItem.leftBarButtonItem.enabled = YES;
-    
+
     isFiltering = YES;
     
-   // JobData *grupa;
     NSMutableArray *compoundPredicate = [NSMutableArray array];
-    //NSString *mehanika = @"Mehanika";
-    
-    //FilterData *number;
-    
-    NSLog(@"ccc - %@", data.jobGroup);
     
     if(data.jobGroup)
     {
-       // NSPredicate *p = [NSPredicate predicateWithFormat:@"SELF.jobGroup CONTAINS[cd] %@", grupa.jobGroup];
         NSPredicate *p = [NSPredicate predicateWithFormat:@"jobGroup CONTAINS[cd] %@", data.jobGroup];
-
         [compoundPredicate addObject:p];
-        
+        NSLog(@"predikate - %@", compoundPredicate);
+    }else if (!data.jobGroup)
+        {
+            NSLog(@"nije izabrana grupa");
+        }
+
+    if (data.jobLocation)
+    {
+        NSPredicate *p = [NSPredicate predicateWithFormat:@"jobLocation CONTAINS[cd] %@", data.jobLocation];
+        [compoundPredicate addObject:p];
         NSLog(@"predikate - %@", compoundPredicate);
     }
+    else if (!data.jobGroup)
+    {
+        NSLog(@"nije izabrana lokacija");
+    }
+
     
     NSPredicate *allPredicate = [NSCompoundPredicate andPredicateWithSubpredicates:compoundPredicate];
     
-    
     self.filteredArray = [self.datasource filteredArrayUsingPredicate:allPredicate];
     [self.tableView reloadData];
-
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -215,8 +168,6 @@
     static NSString *identifier = @"expandingCell";
 
     ExpandingTableViewCell *cell = (ExpandingTableViewCell *)[tableView dequeueReusableCellWithIdentifier:identifier];
-    
-   // JobData *job = [self.datasource objectAtIndex:indexPath.row];
     JobData *job;
     
     if(isFiltering)
@@ -257,23 +208,6 @@
         cell.jobGroupExp.textColor = [UIColor blackColor];
     }
     
-    /*
-    static NSString *identifier = @"cellJob";
-    getJobCell *cell = [self.tableView dequeueReusableCellWithIdentifier:identifier];
-    
-    if(!cell)
-    {
-        cell = [[getJobCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
-    }
-    
-    JobData *job = [self.datasource objectAtIndex:indexPath.row];
-    
-    
-    
-    cell.jobTitle.text = job.jobTitle;
-    cell.jobDescription.text = job.jobDetail;
-    */
-    
     return cell;
 
 }
@@ -297,15 +231,12 @@
         [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
         return;
     }
-    
     if(selectedIndex != -1)
     {
         NSIndexPath *prevPart = [NSIndexPath indexPathForRow:selectedIndex inSection:0];
         selectedIndex = indexPath.row;
         [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:prevPart] withRowAnimation:UITableViewRowAnimationFade];
-
     }
-    
     selectedIndex = indexPath.row;
     [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     
@@ -315,8 +246,16 @@
 {
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     JobDetailTableViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"jobDetailVC"];
+    if([self.storyboard instantiateViewControllerWithIdentifier:@"jobDetailVC"])
+    {
     vc.jobModel = [self.datasource objectAtIndex:indexPath.row];
     [self.navigationController pushViewController:vc animated:YES];
+    }
+    if (isFiltering)
+        vc.jobModel = [self.filteredArray objectAtIndex:indexPath.row];
+    
+    else
+        vc.jobModel = [self.datasource objectAtIndex:indexPath.row];
     
 }
 
@@ -338,25 +277,28 @@
     {
         NSLog(@"Edit insert");
     }
-
 }
 
 -(void)getAllAcountNumbers
 {
-    isFiltering = YES;
     NSMutableArray *array = [NSMutableArray array];
-    
-    for (JobData *t in self.datasource) {
-        isFiltering = YES;
-
+    for (JobData *t in self.datasource)
+    {
         NSString *acc = t.jobGroup;
         [array addObject:acc];
     }
-        isFiltering = YES;
     self.accNumbers = [[NSArray alloc]initWithArray:[[NSSet setWithArray:array] allObjects]];
-    NSLog(@"fil array 8- %@", self.filteredArray);
-    isFiltering = YES;
+}
 
+-(void)getAllAcountLocations
+{
+    NSMutableArray *array = [NSMutableArray array];
+    for (JobData *t in self.datasource)
+    {
+        NSString *acc = t.jobLocation;
+        [array addObject:acc];
+    }
+    self.accLocations = [[NSArray alloc]initWithArray:[[NSSet setWithArray:array] allObjects]];
 }
 
 #pragma mark - Actions
@@ -369,5 +311,11 @@
     [self.navigationController presentViewController:vc animated:YES completion:nil];
 }
 
+- (IBAction)cancelFilteredAction:(id)sender
+{
+    isFiltering = NO;
+    self.navigationItem.leftBarButtonItem.enabled = NO;
+    [self.tableView reloadData];
+}
 
 @end

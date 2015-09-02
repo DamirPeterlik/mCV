@@ -16,6 +16,8 @@
 //@property  NSInteger min;
 //@property  NSInteger max;
 
+@property (nonatomic,strong) NSString *jobTitle;
+@property (nonatomic,strong) NSString *jobLocation;
 @property (nonatomic,strong) NSString *jobGroup;
 
 @end
