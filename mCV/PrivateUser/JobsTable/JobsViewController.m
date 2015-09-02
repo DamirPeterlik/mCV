@@ -91,11 +91,26 @@
                          [self.tableView reloadData];
                          [self.refreshControl setEnabled:YES];
                          [self.refreshControl endRefreshing];
-                         
+                       
+                        /*
+                         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Uspjeh!"
+                                                                        message:@"Podatci ucitani!"
+                                                                       delegate:nil
+                                                              cancelButtonTitle:@"Ok!"
+                                                              otherButtonTitles:nil];
+                        [alert show];
+                         */
+                        
                      } andFailure:^(NSError *error)
                      {
                          NSLog(@"error: %@", error);
                          [self.refreshControl setEnabled:NO];
+                         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Greska!"
+                                                                         message:@"Podatci nisu ucitani!"
+                                                                        delegate:nil
+                                                               cancelButtonTitle:@"Ok!"
+                                                               otherButtonTitles:nil];
+                         [alert show];
 
                      }];
 }
@@ -272,6 +287,12 @@
         [self.datasource removeObjectAtIndex:indexPath.row];
         [tableView reloadData]; // tell table to refresh now
         NSLog(@"Edit delete");
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Uspjeh!"
+                                                        message:@"Podatak obrisan!"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Ok!"
+                                              otherButtonTitles:nil];
+        [alert show];
     }
     else if (editingStyle == UITableViewCellEditingStyleInsert)
     {

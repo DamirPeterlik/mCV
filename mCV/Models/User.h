@@ -13,10 +13,14 @@
 @property (nonatomic,strong) NSString *userID;
 @property (nonatomic,strong) NSString *userName;
 @property (nonatomic,strong) NSString *email;
+@property (nonatomic,strong) NSString *userForeName;
+@property (nonatomic,strong) NSString *userSurName;
+@property (nonatomic,strong) NSString *userProfesion;
+@property (nonatomic,strong) NSString *userLocation;
+
+
 
 //----kasnije ih punim....
-
-@property (nonatomic,strong) NSString *userForeName;
 
 //vazno je da ih ima u bazu, pa da ih moze pronaci, ako ih prazne pronađe radi, ali ako npr ne pronađe u tablici korisnika stupac userForeName, nista ne radi
 

@@ -309,8 +309,8 @@
     
     if ([self.userNameFieldLogin.text isEqualToString:@""] || [self.passFieldLogin.text isEqualToString:@""])
     {
-        UIAlertView *error = [[UIAlertView alloc] initWithTitle:@"Error!"
-                                                        message:@"Fill fields!"
+        UIAlertView *error = [[UIAlertView alloc] initWithTitle:@"Greska!"
+                                                        message:@"Popunite polja!"
                                                        delegate:self
                                               cancelButtonTitle:@"Ok!"
                                               otherButtonTitles:nil];
@@ -330,8 +330,8 @@
                 [keychainWrapper setObject:self.passFieldLogin.text forKey:(__bridge id)(kSecValueData)];
                 
                 NSLog(@"\n___SAVED!___ \nusername_pass: %@,%@", [keychainWrapper objectForKey:(__bridge id)(kSecAttrAccount)],[keychainWrapper objectForKey:(__bridge id)(kSecValueData)]);
-                UIAlertView *error = [[UIAlertView alloc] initWithTitle:@"Good!"
-                                                                message:@"Saved!"
+                UIAlertView *error = [[UIAlertView alloc] initWithTitle:@"Odlicno!"
+                                                                message:@"Spremljeno!"
                                                                delegate:self
                                                       cancelButtonTitle:@"Ok!"
                                                       otherButtonTitles:nil];

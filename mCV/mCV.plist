@@ -12,5 +12,7 @@
 	<string>http://probaairmcv.site40.net/mCV/userImages/0mcvGetUserImg.php?userID=%@</string>
 	<key>APIGetJobsURL</key>
 	<string>http://probaairmcv.site40.net/mCV/mcvGetJobs.php</string>
+	<key>APIUpdateUserURL</key>
+	<string>http://probaairmcv.site40.net/mCV/mcvUpdateUser.php?userID=%@&amp;userForeName=%@&amp;userSurName=%@&amp;email=%@&amp;userProfesion=%@&amp;userLocation=%@</string>
 </dict>
 </plist>

@@ -13,13 +13,13 @@
 @interface APILayer : NSObject
 
 +(void)registerUserWithUserName:(NSString *)userName
-                      withemail:(NSString*)email
-                    andPassword:(NSString*)password
+                      withemail:(NSString *)email
+                    andPassword:(NSString *)password
                      withSucces:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
                      andFailure:(void (^)(NSError *error))failure;
 
 +(void)loginUserWithUserName:(NSString *)userName
-                 andPassword:(NSString*)password
+                 andPassword:(NSString *)password
                   withSucces:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
                   andFailure:(void (^)(NSError *error))failure;
 
@@ -30,5 +30,14 @@
 +(void)getJobsWithjobUrl:(NSString *)jobUrl
                withSucces:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
                andFailure:(void (^)(NSError *error))failure;
+
++(void)updateUserWithUserID:(NSString *)userID
+                withUserForName:(NSString *)userForName
+                withSurName:(NSString *)userSurName
+                  withemail:(NSString *)email
+              withProfesion:(NSString *)profesion
+                    andLocation:(NSString *)location
+                      withSucces:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+                      andFailure:(void (^)(NSError *error))failure;
 
 @end

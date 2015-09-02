@@ -69,6 +69,12 @@
                          
                      } andFailure:^(NSError *error) {
                          NSLog(@"error: %@", error);
+                         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Greska!"
+                                                                         message:@"Podatci nisu ucitani!"
+                                                                        delegate:nil
+                                                               cancelButtonTitle:@"Ok!"
+                                                               otherButtonTitles:nil];
+                         [alert show];
                          
                      }];
     

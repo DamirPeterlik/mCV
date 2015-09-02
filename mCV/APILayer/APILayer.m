@@ -21,8 +21,13 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSString *url = [Helper getValueFromPlistForKey:kConfigAPIRegisterURL];
     NSString *stringUrl = [NSString stringWithFormat:url,userName,email,password];
+    
+    NSString *encoded = [stringUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    [manager POST:stringUrl parameters:nil success:success
+    [manager POST:encoded
+       parameters:nil
+          success:success
           failure:^(AFHTTPRequestOperation *operation, NSError *error) {
               failure(error);
           }];
@@ -36,8 +41,12 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSString *url = [Helper getValueFromPlistForKey:kConfigAPILoginURL];
     NSString *stringUrl = [NSString stringWithFormat:url,userName,password];
+    
+    NSString *encoded = [stringUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    [manager POST:stringUrl parameters:nil success:success
+    [manager POST:encoded
+       parameters:nil success:success
           failure:^(AFHTTPRequestOperation *operation, NSError *error) {
               failure(error);
           }];
@@ -54,7 +63,8 @@
     
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     
-    [manager POST:stringUrl parameters:nil success:success
+    [manager POST:stringUrl parameters:nil
+          success:success
           failure:^(AFHTTPRequestOperation *operation, NSError *error) {
               failure(error);
           }];
@@ -74,7 +84,35 @@
     
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     
-    [manager POST:url parameters:nil success:success
+    [manager POST:url
+       parameters:nil
+          success:success
+          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              failure(error);
+          }];
+    
+}
+
++(void)updateUserWithUserID:(NSString *)userID
+            withUserForName:(NSString *)userForName
+                withSurName:(NSString *)userSurName
+                  withemail:(NSString *)email
+              withProfesion:(NSString *)profesion
+                andLocation:(NSString *)location
+                 withSucces:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+                 andFailure:(void (^)(NSError *error))failure
+{
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSString *url = [Helper getValueFromPlistForKey:kConfigAPIUpdateUserURL];
+    NSString *stringUrl = [NSString stringWithFormat:url,userID, userForName, userSurName, email, profesion, location];
+    
+    NSString *encoded = [stringUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    [manager POST:encoded
+       parameters:nil
+          success:success
           failure:^(AFHTTPRequestOperation *operation, NSError *error) {
               failure(error);
           }];

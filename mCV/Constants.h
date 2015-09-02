@@ -13,6 +13,7 @@ static NSString *kConfigAPILoginURL = @"APILoginURL";
 static NSString *kConfigAPIPostImageLinkToDB = @"APIPostImageURL";
 static NSString *kConfigAPIGetImgURL = @"APIGetImageURL";
 static NSString *kConfigAPIGetJobsURL = @"APIGetJobsURL";
+static NSString *kConfigAPIUpdateUserURL = @"APIUpdateUserURL";
 
 
 static NSString *kApiResponseConstant = @"response";
