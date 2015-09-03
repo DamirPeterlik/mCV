@@ -8,7 +8,7 @@
 
 #import "JobUrlWebViewController.h"
 #import "JobData.h"
-#import "JobDetailTableViewController.h"
+//#import "JobDetailTableViewController.h"
 
 
 @interface JobUrlWebViewController ()

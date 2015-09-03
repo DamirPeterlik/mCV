@@ -19,9 +19,7 @@
 @property (nonatomic,strong) NSString *userLocation;
 
 
-
 //----kasnije ih punim....
-
 //vazno je da ih ima u bazu, pa da ih moze pronaci, ako ih prazne pronađe radi, ali ako npr ne pronađe u tablici korisnika stupac userForeName, nista ne radi
 
 @end
