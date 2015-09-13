@@ -23,6 +23,9 @@
 		0F582B7B1B90570D00077597 /* UserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F582B7A1B90570D00077597 /* UserProfile.m */; };
 		0F582B7E1B90575C00077597 /* puLoginRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F582B7D1B90575C00077597 /* puLoginRegister.m */; };
 		0F582B811B9057A300077597 /* TabBarMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F582B801B9057A300077597 /* TabBarMain.m */; };
+		0F7230661BA1981000D3AB6F /* PDFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F7230651BA1981000D3AB6F /* PDFViewController.m */; };
+		0F7230681BA1987C00D3AB6F /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F7230671BA1987C00D3AB6F /* CoreText.framework */; };
+		0F72306B1BA1AF3C00D3AB6F /* PDFtextToDraw.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F72306A1BA1AF3C00D3AB6F /* PDFtextToDraw.m */; };
 		0F7652031B9484C3001C838F /* JobDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F7652021B9484C3001C838F /* JobDetailTableViewController.m */; };
 		0F7652051B94A9D0001C838F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F7652041B94A9D0001C838F /* MapKit.framework */; };
 		0F7652091B94AA3B001C838F /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F7652081B94AA3B001C838F /* MapViewController.m */; };
@@ -85,6 +88,11 @@
 		0F582B7D1B90575C00077597 /* puLoginRegister.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = puLoginRegister.m; sourceTree = "<group>"; };
 		0F582B7F1B9057A300077597 /* TabBarMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarMain.h; sourceTree = "<group>"; };
 		0F582B801B9057A300077597 /* TabBarMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarMain.m; sourceTree = "<group>"; };
+		0F7230641BA1981000D3AB6F /* PDFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFViewController.h; sourceTree = "<group>"; };
+		0F7230651BA1981000D3AB6F /* PDFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFViewController.m; sourceTree = "<group>"; };
+		0F7230671BA1987C00D3AB6F /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		0F7230691BA1AF3C00D3AB6F /* PDFtextToDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFtextToDraw.h; sourceTree = "<group>"; };
+		0F72306A1BA1AF3C00D3AB6F /* PDFtextToDraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFtextToDraw.m; sourceTree = "<group>"; };
 		0F7652011B9484C3001C838F /* JobDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobDetailTableViewController.h; sourceTree = "<group>"; };
 		0F7652021B9484C3001C838F /* JobDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobDetailTableViewController.m; sourceTree = "<group>"; };
 		0F7652041B94A9D0001C838F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -126,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F7230681BA1987C00D3AB6F /* CoreText.framework in Frameworks */,
 				0F7652051B94A9D0001C838F /* MapKit.framework in Frameworks */,
 				7D2FBD7D85EE45A4EC9C0911 /* libPods.a in Frameworks */,
 			);
@@ -201,6 +210,7 @@
 				0F582B821B90607C00077597 /* JobsTable */,
 				0F7652061B94AA0C001C838F /* Maps */,
 				0FA0F3D41B95EE6B003010D2 /* Favorites */,
+				0F7230631BA1922300D3AB6F /* PDFgenerate */,
 			);
 			path = PrivateUser;
 			sourceTree = "<group>";
@@ -221,6 +231,17 @@
 				0FB2B5FB1B93245D005B053C /* Model */,
 			);
 			path = JobsTable;
+			sourceTree = "<group>";
+		};
+		0F7230631BA1922300D3AB6F /* PDFgenerate */ = {
+			isa = PBXGroup;
+			children = (
+				0F7230691BA1AF3C00D3AB6F /* PDFtextToDraw.h */,
+				0F72306A1BA1AF3C00D3AB6F /* PDFtextToDraw.m */,
+				0F7230641BA1981000D3AB6F /* PDFViewController.h */,
+				0F7230651BA1981000D3AB6F /* PDFViewController.m */,
+			);
+			path = PDFgenerate;
 			sourceTree = "<group>";
 		};
 		0F7652061B94AA0C001C838F /* Maps */ = {
@@ -341,6 +362,7 @@
 		39D1F2564067B114B0BC0F08 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0F7230671BA1987C00D3AB6F /* CoreText.framework */,
 				0F7652041B94A9D0001C838F /* MapKit.framework */,
 				A67DEC32B4AD9E99162EB078 /* libPods.a */,
 			);
@@ -495,12 +517,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F72306B1BA1AF3C00D3AB6F /* PDFtextToDraw.m in Sources */,
 				0F49A8361B91A62F00A62D2D /* User.m in Sources */,
 				0F582B7B1B90570D00077597 /* UserProfile.m in Sources */,
 				0F1FDDDE1B95C7A2001629C1 /* JobUrlWebViewController.m in Sources */,
 				0FFEBFF11B8B0E21006F8DA6 /* AppDelegate.m in Sources */,
 				0FA0F3E21B9612AA003010D2 /* TableListPickerController.m in Sources */,
 				0F582B811B9057A300077597 /* TabBarMain.m in Sources */,
+				0F7230661BA1981000D3AB6F /* PDFViewController.m in Sources */,
 				0F1FDDDB1B9594A5001629C1 /* ExpandingTableViewCell.m in Sources */,
 				0FFEBFEE1B8B0E21006F8DA6 /* main.m in Sources */,
 				0FA0F3E81B9615A8003010D2 /* FilterData.m in Sources */,
