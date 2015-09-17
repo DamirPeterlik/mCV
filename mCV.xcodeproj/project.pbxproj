@@ -29,14 +29,27 @@
 		0F7652031B9484C3001C838F /* JobDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F7652021B9484C3001C838F /* JobDetailTableViewController.m */; };
 		0F7652051B94A9D0001C838F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F7652041B94A9D0001C838F /* MapKit.framework */; };
 		0F7652091B94AA3B001C838F /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F7652081B94AA3B001C838F /* MapViewController.m */; };
-		0FA0F3D71B95EFAC003010D2 /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA0F3D61B95EFAC003010D2 /* FavoritesViewController.m */; };
-		0FA0F3DD1B95F0E2003010D2 /* FavoritesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA0F3DC1B95F0E2003010D2 /* FavoritesCell.m */; };
 		0FA0F3E21B9612AA003010D2 /* TableListPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA0F3E01B9612AA003010D2 /* TableListPickerController.m */; };
 		0FA0F3E31B9612AA003010D2 /* TableListPickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FA0F3E11B9612AA003010D2 /* TableListPickerController.xib */; };
 		0FA0F3E81B9615A8003010D2 /* FilterData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA0F3E51B9615A8003010D2 /* FilterData.m */; };
 		0FA0F3E91B9615A8003010D2 /* FilterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA0F3E71B9615A8003010D2 /* FilterTableViewController.m */; };
 		0FB2B5FE1B93249B005B053C /* JobData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB2B5FD1B93249B005B053C /* JobData.m */; };
 		0FB2B6011B934FF8005B053C /* JobsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB2B6001B934FF8005B053C /* JobsViewController.m */; };
+		0FC15FB31BA8772900CF03D0 /* welcomeImage_mCV.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0FC15FB01BA8772900CF03D0 /* welcomeImage_mCV.jpg */; };
+		0FC15FB41BA8772900CF03D0 /* welcomeImage2_mCV.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0FC15FB11BA8772900CF03D0 /* welcomeImage2_mCV.jpg */; };
+		0FC15FB51BA8772900CF03D0 /* welcomeImage3_mCV.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0FC15FB21BA8772900CF03D0 /* welcomeImage3_mCV.jpg */; };
+		0FC15FB71BA978C300CF03D0 /* login9.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FC15FB61BA978C300CF03D0 /* login9.png */; };
+		0FC15FB91BA9792D00CF03D0 /* register2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FC15FB81BA9792D00CF03D0 /* register2.png */; };
+		0FC15FBB1BA98F6000CF03D0 /* imagePlace.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FC15FBA1BA98F6000CF03D0 /* imagePlace.png */; };
+		0FC15FBD1BA98F8200CF03D0 /* profil1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FC15FBC1BA98F8200CF03D0 /* profil1.png */; };
+		0FC15FBF1BA9900D00CF03D0 /* profil_edit1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FC15FBE1BA9900C00CF03D0 /* profil_edit1.png */; };
+		0FC15FC11BA99F9500CF03D0 /* profil2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FC15FC01BA99F9500CF03D0 /* profil2.png */; };
+		0FC15FC91BA9A45900CF03D0 /* profile-icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FC15FC81BA9A45900CF03D0 /* profile-icon2.png */; };
+		0FC15FCB1BA9A4AB00CF03D0 /* List.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FC15FCA1BA9A4AB00CF03D0 /* List.png */; };
+		0FC15FD01BA9B57E00CF03D0 /* createEuropass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC15FCF1BA9B57E00CF03D0 /* createEuropass.m */; };
+		0FC15FD21BA9BAA600CF03D0 /* thin-081_file_document_cv_curriculum_vitae-512.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FC15FD11BA9BAA600CF03D0 /* thin-081_file_document_cv_curriculum_vitae-512.png */; };
+		0FC15FD51BA9BC7700CF03D0 /* showPDF.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC15FD41BA9BC7700CF03D0 /* showPDF.m */; };
+		0FC15FD71BA9BCB300CF03D0 /* DamirPeterlik.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 0FC15FD61BA9BCB300CF03D0 /* DamirPeterlik.pdf */; };
 		0FFEBFEE1B8B0E21006F8DA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FFEBFED1B8B0E21006F8DA6 /* main.m */; };
 		0FFEBFF11B8B0E21006F8DA6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FFEBFF01B8B0E21006F8DA6 /* AppDelegate.m */; };
 		0FFEBFF71B8B0E21006F8DA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FFEBFF51B8B0E21006F8DA6 /* Main.storyboard */; };
@@ -98,10 +111,6 @@
 		0F7652041B94A9D0001C838F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		0F7652071B94AA3B001C838F /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		0F7652081B94AA3B001C838F /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
-		0FA0F3D51B95EFAC003010D2 /* FavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesViewController.h; sourceTree = "<group>"; };
-		0FA0F3D61B95EFAC003010D2 /* FavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesViewController.m; sourceTree = "<group>"; };
-		0FA0F3DB1B95F0E2003010D2 /* FavoritesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesCell.h; sourceTree = "<group>"; };
-		0FA0F3DC1B95F0E2003010D2 /* FavoritesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesCell.m; sourceTree = "<group>"; };
 		0FA0F3DF1B9612AA003010D2 /* TableListPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableListPickerController.h; sourceTree = "<group>"; };
 		0FA0F3E01B9612AA003010D2 /* TableListPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableListPickerController.m; sourceTree = "<group>"; };
 		0FA0F3E11B9612AA003010D2 /* TableListPickerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableListPickerController.xib; sourceTree = "<group>"; };
@@ -113,6 +122,23 @@
 		0FB2B5FD1B93249B005B053C /* JobData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobData.m; sourceTree = "<group>"; };
 		0FB2B5FF1B934FF8005B053C /* JobsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsViewController.h; sourceTree = "<group>"; };
 		0FB2B6001B934FF8005B053C /* JobsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobsViewController.m; sourceTree = "<group>"; };
+		0FC15FB01BA8772900CF03D0 /* welcomeImage_mCV.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = welcomeImage_mCV.jpg; sourceTree = "<group>"; };
+		0FC15FB11BA8772900CF03D0 /* welcomeImage2_mCV.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = welcomeImage2_mCV.jpg; sourceTree = "<group>"; };
+		0FC15FB21BA8772900CF03D0 /* welcomeImage3_mCV.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = welcomeImage3_mCV.jpg; sourceTree = "<group>"; };
+		0FC15FB61BA978C300CF03D0 /* login9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login9.png; sourceTree = "<group>"; };
+		0FC15FB81BA9792D00CF03D0 /* register2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = register2.png; sourceTree = "<group>"; };
+		0FC15FBA1BA98F6000CF03D0 /* imagePlace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imagePlace.png; sourceTree = "<group>"; };
+		0FC15FBC1BA98F8200CF03D0 /* profil1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profil1.png; sourceTree = "<group>"; };
+		0FC15FBE1BA9900C00CF03D0 /* profil_edit1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profil_edit1.png; sourceTree = "<group>"; };
+		0FC15FC01BA99F9500CF03D0 /* profil2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profil2.png; sourceTree = "<group>"; };
+		0FC15FC81BA9A45900CF03D0 /* profile-icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile-icon2.png"; sourceTree = "<group>"; };
+		0FC15FCA1BA9A4AB00CF03D0 /* List.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = List.png; sourceTree = "<group>"; };
+		0FC15FCE1BA9B57E00CF03D0 /* createEuropass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = createEuropass.h; sourceTree = "<group>"; };
+		0FC15FCF1BA9B57E00CF03D0 /* createEuropass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = createEuropass.m; sourceTree = "<group>"; };
+		0FC15FD11BA9BAA600CF03D0 /* thin-081_file_document_cv_curriculum_vitae-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thin-081_file_document_cv_curriculum_vitae-512.png"; sourceTree = "<group>"; };
+		0FC15FD31BA9BC7700CF03D0 /* showPDF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = showPDF.h; sourceTree = "<group>"; };
+		0FC15FD41BA9BC7700CF03D0 /* showPDF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = showPDF.m; sourceTree = "<group>"; };
+		0FC15FD61BA9BCB300CF03D0 /* DamirPeterlik.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = DamirPeterlik.pdf; sourceTree = "<group>"; };
 		0FFEBFE81B8B0E21006F8DA6 /* mCV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mCV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FFEBFEC1B8B0E21006F8DA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FFEBFED1B8B0E21006F8DA6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -208,8 +234,9 @@
 				0F582B7F1B9057A300077597 /* TabBarMain.h */,
 				0F582B801B9057A300077597 /* TabBarMain.m */,
 				0F582B821B90607C00077597 /* JobsTable */,
+				0FC15FCC1BA9B53D00CF03D0 /* Europass */,
+				0FC15FCD1BA9B53D00CF03D0 /* Favorites */,
 				0F7652061B94AA0C001C838F /* Maps */,
-				0FA0F3D41B95EE6B003010D2 /* Favorites */,
 				0F7230631BA1922300D3AB6F /* PDFgenerate */,
 			);
 			path = PrivateUser;
@@ -253,17 +280,6 @@
 			path = Maps;
 			sourceTree = "<group>";
 		};
-		0FA0F3D41B95EE6B003010D2 /* Favorites */ = {
-			isa = PBXGroup;
-			children = (
-				0FA0F3D51B95EFAC003010D2 /* FavoritesViewController.h */,
-				0FA0F3D61B95EFAC003010D2 /* FavoritesViewController.m */,
-				0FA0F3DB1B95F0E2003010D2 /* FavoritesCell.h */,
-				0FA0F3DC1B95F0E2003010D2 /* FavoritesCell.m */,
-			);
-			path = Favorites;
-			sourceTree = "<group>";
-		};
 		0FA0F3DE1B961279003010D2 /* filter */ = {
 			isa = PBXGroup;
 			children = (
@@ -288,6 +304,43 @@
 				0FB2B5FD1B93249B005B053C /* JobData.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		0FC15FAF1BA8771900CF03D0 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				0FC15FB01BA8772900CF03D0 /* welcomeImage_mCV.jpg */,
+				0FC15FB11BA8772900CF03D0 /* welcomeImage2_mCV.jpg */,
+				0FC15FB21BA8772900CF03D0 /* welcomeImage3_mCV.jpg */,
+				0FC15FB61BA978C300CF03D0 /* login9.png */,
+				0FC15FB81BA9792D00CF03D0 /* register2.png */,
+				0FC15FBA1BA98F6000CF03D0 /* imagePlace.png */,
+				0FC15FBC1BA98F8200CF03D0 /* profil1.png */,
+				0FC15FC01BA99F9500CF03D0 /* profil2.png */,
+				0FC15FBE1BA9900C00CF03D0 /* profil_edit1.png */,
+				0FC15FC81BA9A45900CF03D0 /* profile-icon2.png */,
+				0FC15FCA1BA9A4AB00CF03D0 /* List.png */,
+				0FC15FD11BA9BAA600CF03D0 /* thin-081_file_document_cv_curriculum_vitae-512.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		0FC15FCC1BA9B53D00CF03D0 /* Europass */ = {
+			isa = PBXGroup;
+			children = (
+				0FC15FCE1BA9B57E00CF03D0 /* createEuropass.h */,
+				0FC15FCF1BA9B57E00CF03D0 /* createEuropass.m */,
+				0FC15FD31BA9BC7700CF03D0 /* showPDF.h */,
+				0FC15FD41BA9BC7700CF03D0 /* showPDF.m */,
+			);
+			path = Europass;
+			sourceTree = "<group>";
+		};
+		0FC15FCD1BA9B53D00CF03D0 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Favorites;
 			sourceTree = "<group>";
 		};
 		0FFEBFDF1B8B0E21006F8DA6 = {
@@ -332,6 +385,8 @@
 		0FFEBFEB1B8B0E21006F8DA6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0FC15FD61BA9BCB300CF03D0 /* DamirPeterlik.pdf */,
+				0FC15FAF1BA8771900CF03D0 /* Images */,
 				0FFEBFEF1B8B0E21006F8DA6 /* AppDelegate.h */,
 				0FFEBFF01B8B0E21006F8DA6 /* AppDelegate.m */,
 				0FFEBFEC1B8B0E21006F8DA6 /* Info.plist */,
@@ -463,10 +518,23 @@
 				0FFEBFF71B8B0E21006F8DA6 /* Main.storyboard in Resources */,
 				0F2490861B972B69003132A3 /* TableListPickerLocationsViewController.xib in Resources */,
 				0F3638AF1B8C4DAE00CD1A86 /* mCV.plist in Resources */,
+				0FC15FB51BA8772900CF03D0 /* welcomeImage3_mCV.jpg in Resources */,
 				0FA0F3E31B9612AA003010D2 /* TableListPickerController.xib in Resources */,
+				0FC15FBB1BA98F6000CF03D0 /* imagePlace.png in Resources */,
 				0F1FDDD81B95930A001629C1 /* ExpandingCell.xib in Resources */,
+				0FC15FC91BA9A45900CF03D0 /* profile-icon2.png in Resources */,
 				0FFEBFFC1B8B0E21006F8DA6 /* LaunchScreen.xib in Resources */,
+				0FC15FCB1BA9A4AB00CF03D0 /* List.png in Resources */,
+				0FC15FD71BA9BCB300CF03D0 /* DamirPeterlik.pdf in Resources */,
+				0FC15FB91BA9792D00CF03D0 /* register2.png in Resources */,
+				0FC15FB71BA978C300CF03D0 /* login9.png in Resources */,
 				0FFEBFF91B8B0E21006F8DA6 /* Images.xcassets in Resources */,
+				0FC15FD21BA9BAA600CF03D0 /* thin-081_file_document_cv_curriculum_vitae-512.png in Resources */,
+				0FC15FBD1BA98F8200CF03D0 /* profil1.png in Resources */,
+				0FC15FC11BA99F9500CF03D0 /* profil2.png in Resources */,
+				0FC15FB31BA8772900CF03D0 /* welcomeImage_mCV.jpg in Resources */,
+				0FC15FB41BA8772900CF03D0 /* welcomeImage2_mCV.jpg in Resources */,
+				0FC15FBF1BA9900D00CF03D0 /* profil_edit1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +588,7 @@
 				0F72306B1BA1AF3C00D3AB6F /* PDFtextToDraw.m in Sources */,
 				0F49A8361B91A62F00A62D2D /* User.m in Sources */,
 				0F582B7B1B90570D00077597 /* UserProfile.m in Sources */,
+				0FC15FD51BA9BC7700CF03D0 /* showPDF.m in Sources */,
 				0F1FDDDE1B95C7A2001629C1 /* JobUrlWebViewController.m in Sources */,
 				0FFEBFF11B8B0E21006F8DA6 /* AppDelegate.m in Sources */,
 				0FA0F3E21B9612AA003010D2 /* TableListPickerController.m in Sources */,
@@ -536,9 +605,8 @@
 				0FB2B6011B934FF8005B053C /* JobsViewController.m in Sources */,
 				0FB2B5FE1B93249B005B053C /* JobData.m in Sources */,
 				0F582B7E1B90575C00077597 /* puLoginRegister.m in Sources */,
-				0FA0F3DD1B95F0E2003010D2 /* FavoritesCell.m in Sources */,
+				0FC15FD01BA9B57E00CF03D0 /* createEuropass.m in Sources */,
 				0F582B781B9056C200077597 /* Helper.m in Sources */,
-				0FA0F3D71B95EFAC003010D2 /* FavoritesViewController.m in Sources */,
 				0F2490851B972B69003132A3 /* TableListPickerLocationsViewController.m in Sources */,
 				0F7652091B94AA3B001C838F /* MapViewController.m in Sources */,
 				0F582B721B90561600077597 /* PickUser.m in Sources */,

@@ -37,15 +37,18 @@
     self.activityIndicator.hidden = NO;
     [self.activityIndicator startAnimating];
     
-    self.navItem.title =@"Profil korisnika";
+    self.navItem.title =@"Profil";
 
-    self.userImg.layer.borderWidth = 5.0f;
+    //self.userImg.layer.borderWidth = 2.0f;
     self.userImg.layer.cornerRadius = 100;
     self.userImg.layer.masksToBounds = YES;
-    self.userImg.layer.borderColor = [[UIColor colorWithRed:207.0f/255.0f green:226.0f/255.0f blue:243.0f/255.0f alpha:1.0] CGColor];
+    //self.userImg.layer.borderColor = [[UIColor colorWithRed:207.0f/255.0f green:226.0f/255.0f blue:243.0f/255.0f alpha:1.0] CGColor];
 
     [self getUserImage];
-
+    
+    NSString *joj;
+    joj = self.magicString;
+    NSLog(@"Moje ime je %@, jedan dva.", joj);
 }
 
 - (IBAction)exitMCV:(id)sender
@@ -55,9 +58,7 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
 
 - (void) getUserImage
 {
@@ -65,27 +66,27 @@
     //[self.activityIndicator startAnimating];
     
     KeychainItemWrapper *user = [[KeychainItemWrapper alloc] initWithIdentifier:@"token" accessGroup:nil];
-    NSLog(@"\n User data - name - %@, ID - %@", [user objectForKey:(__bridge id)(kSecAttrAccount)], [user objectForKey:(__bridge id)(kSecValueData)]);
+   // NSLog(@"\n User data - name - %@, ID - %@", [user objectForKey:(__bridge id)(kSecAttrAccount)], [user objectForKey:(__bridge id)(kSecValueData)]);
     NSString *userID = [user objectForKey:(__bridge id)(kSecValueData)];
     
     [APILayer getImageWithUserID:userID
                       withSucces:^(AFHTTPRequestOperation *operation, id responseObject) {
                           
-                          NSLog(@"Response object \n: %@", responseObject);
+                          //NSLog(@"Response object \n: %@", responseObject);
                           
                           //______NOVO____PROBA____CONFIGURATION&USER_______//
-                          NSLog(@"----Proba!!!----");
+                          //NSLog(@"----Proba!!!----");
                           NSError *error = nil;
                           User *userNew = [[User alloc]initWithDictionary:responseObject error:&error];
                           if(error==nil)
                           {
                               Configuration *config = [Configuration sharedConfiguration];
                               config.user = userNew;
-                              NSLog(@"Serialization OK! User: %@",userNew);
+                              //NSLog(@"Serialization OK! User: %@",userNew);
                               [self getUserData];
                           }
                           else{
-                              NSLog(@"Serialization Failed!ERROR:%@",error);
+                              //NSLog(@"Serialization Failed!ERROR:%@",error);
                           }
                           //______NOVO____PROBA____CONFIGURATION&USER_______//
                           //gets user data, needs to have response of connection to get the data
@@ -95,14 +96,14 @@
                           [imageCache clearMemory];
                           [imageCache clearDisk];
                           NSString *imageLink = [responseObject objectForKey:@"imageLink"];
-                          NSLog(@"Image link: %@", imageLink);
+                          //NSLog(@"Image link: %@", imageLink);
                          
                         [self.userImg sd_setImageWithURL:[NSURL URLWithString:imageLink]];
                               
-                        self.userImg.layer.borderWidth = 5.0f;
+                        //self.userImg.layer.borderWidth = 2.0f;
                         self.userImg.layer.cornerRadius = 100;
                         self.userImg.layer.masksToBounds = YES;
-                        self.userImg.layer.borderColor = [[UIColor colorWithRed:207.0f/255.0f green:226.0f/255.0f blue:243.0f/255.0f alpha:1.0] CGColor];
+                        //self.userImg.layer.borderColor = [[UIColor colorWithRed:207.0f/255.0f green:226.0f/255.0f blue:243.0f/255.0f alpha:1.0] CGColor];
                           
                           [self.activityIndicator stopAnimating];
                           self.activityIndicator.hidesWhenStopped = YES;
@@ -142,5 +143,11 @@
      [self getUserImage];
  }
 
+- (NSString *)magicString
+{
+    NSString *stringToReturn = @"dado";
+    
+    return stringToReturn;
+}
 
 @end

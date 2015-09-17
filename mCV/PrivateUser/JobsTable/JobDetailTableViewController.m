@@ -21,7 +21,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.navigationItem.title = @"Detalji";
+
     //self.jobTitleLbl.text = @"proba";
     
     //[self showJobDetail];

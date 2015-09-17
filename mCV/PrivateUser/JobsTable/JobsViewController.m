@@ -36,9 +36,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navItem.title = @"Job/Posao";
+    self.navItem.title = @"Poslovi";
     selectedIndex = -1;
-    
+    self.navigationItem.title = @"Poslovi";
+
     self.navigationItem.backBarButtonItem = nil;
     self.navigationItem.hidesBackButton = YES;
     self.refreshControl = [[UIRefreshControl alloc]init];
@@ -66,7 +67,7 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    self.tabBarController.navigationItem.title =@"Jobs/Poslovi";
+    self.tabBarController.navigationItem.title =@"Poslovi";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -213,10 +214,9 @@
         cell.jobDescriptionExp.textColor = [UIColor whiteColor];
         cell.jobGroupExp.textColor = [UIColor whiteColor];
         cell.jobDescriptionExp.hidden = NO;
-
     }
     else {
-        cell.contentView.backgroundColor = [UIColor whiteColor];
+        cell.contentView.backgroundColor = [UIColor colorWithRed:210.0f/255.0f green:248.0f/255.0f blue:255.0f/255.0f alpha:1.0];
         cell.jobTitleExp.textColor = [UIColor blackColor];
         cell.jobTitleExp.font = [UIFont systemFontOfSize:17];
         cell.jobDescriptionExp.textColor = [UIColor blackColor];

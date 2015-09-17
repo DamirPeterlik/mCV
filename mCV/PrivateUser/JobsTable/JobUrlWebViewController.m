@@ -19,6 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = @"Web";
+
     // Do any additional setup after loading the view.
     [self getUrl];
     

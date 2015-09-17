@@ -24,7 +24,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *userProfesionLbl;
 @property (strong, nonatomic) IBOutlet UILabel *userLocationLbl;
 
-
-
+- (NSString *)magicString;
 
 @end

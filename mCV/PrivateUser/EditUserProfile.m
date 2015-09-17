@@ -23,12 +23,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navItemEditProfile.title =@"Uredi profil";
-    
-    self.userImgEditProfile.layer.borderWidth = 5.0f;
+    //self.navItemEditProfile.title =@"Uredi profil";
+    self.navigationItem.title = @"Uredi profil";
+
+    //self.userImgEditProfile.layer.borderWidth = 2.0f;
     self.userImgEditProfile.layer.cornerRadius = 100;
     self.userImgEditProfile.layer.masksToBounds = YES;
-    self.userImgEditProfile.layer.borderColor = [[UIColor whiteColor] CGColor];
+    //self.userImgEditProfile.layer.borderColor = [[UIColor whiteColor] CGColor];
     
     self.activityIndicator.hidden = YES;
     
@@ -171,10 +172,10 @@
                                                  [self.activityIndicator stopAnimating];
                                                  self.activityIndicator.hidesWhenStopped = YES;
                                                  
-                                                 self.userImgEditProfile.layer.borderWidth = 5.0f;
-                                                 self.userImgEditProfile.layer.cornerRadius = 100;
-                                                 self.userImgEditProfile.layer.masksToBounds = YES;
-                                                 self.userImgEditProfile.layer.borderColor = [[UIColor colorWithRed:181.0f/255.0f green:244.0f/255.0f blue:234.0f/255.0f alpha:1.0] CGColor];
+                                                //self.userImgEditProfile.layer.borderWidth = 5.0f;
+                                                self.userImgEditProfile.layer.cornerRadius = 100;
+                                                self.userImgEditProfile.layer.masksToBounds = YES;
+                                                // self.userImgEditProfile.layer.borderColor = [[UIColor colorWithRed:181.0f/255.0f green:244.0f/255.0f blue:234.0f/255.0f alpha:1.0] CGColor];
                                                  
                                                  [self registerToDB];
 
@@ -285,10 +286,10 @@
 -(void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    self.tabBarController.navigationItem.title =nil;
-    self.tabBarController.navigationItem.rightBarButtonItem = nil;
-    self.tabBarController.navigationItem.leftBarButtonItem = nil;
-    self.tabBarController.navigationItem.rightBarButtonItems = nil;
+    //self.tabBarController.navigationItem.title =nil;
+   // self.tabBarController.navigationItem.rightBarButtonItem = nil;
+    //self.tabBarController.navigationItem.leftBarButtonItem = nil;
+   // self.tabBarController.navigationItem.rightBarButtonItems = nil;
 }
 
 

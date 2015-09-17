@@ -45,7 +45,7 @@
     
     self.loginView.hidden = NO;
     self.registerView.hidden = YES;
-    self.navigationItem.title = @"Login";
+    self.navigationItem.title = @"mCV";
     
     [self switchSavedData];
     
@@ -285,7 +285,7 @@
             if (self.segmentControlLoginRegister.selectedSegmentIndex == 0)
             {
                 NSLog(@"Segment LOGIN picked!");
-                self.navigationItem.title = @"Login proces";
+                self.navigationItem.title = @"mCV";
             }
             break;
         case 1:
@@ -295,7 +295,7 @@
             if (self.segmentControlLoginRegister.selectedSegmentIndex == 1)
             {
                 NSLog(@"Segment REGISTER picked!");
-                self.navigationItem.title = @"Registration proces";
+                self.navigationItem.title = @"mCV";
             }
             break;
         default:

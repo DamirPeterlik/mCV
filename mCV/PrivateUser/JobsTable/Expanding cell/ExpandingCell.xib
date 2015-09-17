@@ -35,7 +35,9 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" red="0.82286864979999996" green="0.96826740730000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             </tableViewCellContentView>
+            <color key="backgroundColor" red="0.82286864979999996" green="0.96826740730000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="jobDescriptionExp" destination="EPc-sf-j9I" id="aNU-q9-2jT"/>
                 <outlet property="jobGroupExp" destination="R1G-SK-47Q" id="cUG-ev-Zwg"/>
